@@ -1,0 +1,785 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff;
+  color: #222;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Border with Indian Flag Colors */
+.border-india {
+  border: 10px solid transparent;
+  border-image: linear-gradient(
+    to right,
+    #ff9933 33%,
+    white 33%,
+    white 66%,
+    #138808 66%
+  )
+    1;
+}
+
+/* Jet Intro */
+#jetIntro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.jet {
+  width: 60px;
+  height: 60px;
+  background: url('assets/jet.png') no-repeat center;
+  background-size: contain;
+  animation: fly 4s linear forwards;
+}
+.jet1 {
+  animation-delay: 0s;
+}
+.jet2 {
+  animation-delay: 0.5s;
+}
+.jet3 {
+  animation-delay: 1s;
+}
+.trail {
+  width: 5px;
+  height: 100px;
+  background: linear-gradient(to bottom, #ff9933, white, #138808);
+  animation: trailAnim 1s infinite;
+}
+@keyframes fly {
+  0% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+@keyframes trailAnim {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Glittery INDIA */
+.india-text {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #ff9933;
+  text-shadow: 0 0 5px #fff, 0 0 20px #ff9933;
+  animation: glitter 1.5s infinite;
+  margin: 20px 0;
+}
+@keyframes glitter {
+  0%,
+  100% {
+    text-shadow: 0 0 5px #fff, 0 0 20px #ff9933;
+  }
+  50% {
+    text-shadow: 0 0 10px #fff, 0 0 30px #ff9933;
+  }
+}
+
+/* Fade-in Main */
+#mainContent {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+#mainContent.show {
+  display: block;
+  opacity: 1;
+}
+
+/* Top Flag */
+.top-flag {
+  width: 200px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #ddd;
+}
+
+/* Headings */
+h1{
+  font-weight: 900;
+  color: #ff6800;
+  margin: 15px 0;
+  text-shadow: 0 0 3px #ff9933;
+}
+h1 {
+  font-size: 2.5rem;
+}
+
+
+h2 {
+  font-weight: 900;
+  color: #0d6efd;
+  margin: 15px 0;
+  text-shadow: 0 0 3px #ff9933;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+h3 {
+  font-weight: 900;
+  color: #138808;
+  margin: 15px 0;
+  text-shadow: 0 0 3px #ff9933;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+h4 {
+  font-weight: 900;
+  color: black;
+  margin: 15px 0;
+  text-shadow: 0 0 3px #ff9933;
+}
+
+h4 {
+  font-size: 2rem;
+}
+/* Countdown Section */
+.countdown-section {
+  background: #e6f9ff;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 500px;
+  border-radius: 10px;
+  border: 2px solid #0d6efd;
+}
+#countdown {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #d63384;
+  margin-top: 10px;
+}
+
+/* Intro Section */
+.intro {
+  background: #fff8e1;
+  border-left: 6px solid #ff9933;
+  border-right: 6px solid #138808;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 800px;
+  border-radius: 10px;
+}
+.intro p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+.intro ul {
+  list-style: none;
+  margin-top: 10px;
+}
+.intro li {
+  padding: 6px 0;
+  font-size: 1.1rem;
+  position: relative;
+  padding-left: 30px;
+}
+.intro li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: #138808;
+}
+
+/* Gallery Section */
+.gallery {
+  padding: 20px;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin: 20px auto;
+  max-width: 900px;
+}
+.gallery-grid img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #0d6efd;
+  box-shadow: 0 0 12px #aaa;
+  transition: transform 0.3s ease;
+}
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Achievements Section */
+.achievements {
+  background: #00000;
+  border: 2px dashed #198754;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 800px;
+}
+.achievements ul {
+  list-style: none;
+  margin-top: 10px;
+}
+.achievements li {
+  padding: 6px 0;
+  font-size: 1.1rem;
+  position: relative;
+  padding-left: 30px;
+}
+.achievements li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #198754;
+}
+
+
+/* Form Section */
+.form-section {
+  background: #138808;
+  color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 40px auto;
+  box-shadow: 0 0 15px #0a5004;
+}
+.form-section .form-title {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #fff;
+  text-shadow: 1px 1px 3px #000;
+}
+.form-section .form-text {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+.form-section input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+.form-section button {
+  background: #ff9933;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.form-section button:hover {
+  background: #e67e00;
+}
+#confettiHolder {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
+  pointer-events: none;
+}
+
+/* Footer */
+footer {
+  margin-top: 50px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Certificate Page Styles */
+.certificate-body {
+  background: #f6f0e1;
+  padding: 40px;
+  position: relative;
+}
+.certificate-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  background: #fff;
+  border: 8px solid #ff9933;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  position: relative;
+  text-align: center;
+}
+.certificate-container .cert-flag {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 80px;
+}
+.certificate-container h1 {
+  font-size: 2.5rem;
+  color: #138808;
+  margin-bottom: 10px;
+}
+.certificate-container p {
+  font-size: 1.2rem;
+  margin: 15px 0;
+  line-height: 1.5;
+}
+.certificate-container h2 {
+  font-size: 2rem;
+  color: #ff9933;
+  margin: 20px 0;
+  border-bottom: 2px solid #ff9933;
+  display: inline-block;
+  padding: 0 10px;
+}
+.certificate-container .date-issue {
+  font-style: italic;
+  color: #5a3e1b;
+  margin-top: 30px;
+  font-size: 1.1rem;
+}
+.certificate-container .sign {
+  margin-top: 40px;
+  font-size: 1.5rem;
+  color: #d63384;
+}
+.controls {
+  text-align: center;
+  margin-top: 30px;
+}
+.controls button {
+  background: #138808;
+  color: #fff;
+  border: none;
+  font-size: 1.1rem;
+  padding: 12px 24px;
+  margin: 0 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #0a5004;
+  transition: background-color 0.3s ease;
+}
+.controls button:hover {
+  background: #0a5004;
+}
+.jet-container {
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+.jet-container .jet {
+  width: 60px;
+  height: 60px;
+  background: url('assets/jet.png') no-repeat center;
+  background-size: contain;
+  position: absolute;
+  left: -80px;
+  top: 20px;
+  animation: fly 4s linear forwards;
+  display: none;
+}
+
+#mainContent {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+#mainContent.show {
+  display: block !important;
+  opacity: 1;
+}
+/* ==== Certificate Enhancements (append at end of style.css) ==== */
+
+.certificate-body {
+  background: #f6f0e1;
+  padding: 40px;
+  position: relative;
+  font-family: 'Georgia', serif;
+  color: #3b2e1a;
+}
+
+.certificate-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  background: #fff;
+  border: 12px double #a67c00;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.2);
+  position: relative;
+  text-align: center;
+}
+
+.certificate-container .cert-flag {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 90px;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+.certificate-container h1 {
+  font-size: 2.8rem;
+  font-family: 'Georgia', serif;
+  color: #a65e00;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px #fff1d6;
+}
+
+.certificate-container .cert-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #444;
+}
+
+.certificate-container h2.cert-name {
+  font-size: 2.2rem;
+  color: #d2691e;
+  margin: 20px auto;
+  border-bottom: 2px solid #a67c00;
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.certificate-container .cert-body,
+.certificate-container .cert-extra {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin: 20px auto;
+  max-width: 90%;
+}
+
+.certificate-container ul.cert-features {
+  list-style: none;
+  padding-left: 0;
+  margin: 20px auto 30px;
+}
+
+.certificate-container ul.cert-features li {
+  font-size: 1.1rem;
+  padding: 6px 0;
+  color: #444;
+}
+
+.certificate-container .date-issue {
+  font-style: italic;
+  color: #5a3e1b;
+  margin-top: 30px;
+  font-size: 1.1rem;
+}
+
+.certificate-container .sign {
+  margin-top: 30px;
+  font-size: 1.6rem;
+  color: #d63384;
+}
+
+.controls {
+  text-align: center;
+  margin-top: 40px;
+}
+.controls button {
+  background: #0d6efd;
+  color: #fff;
+  border: none;
+  font-size: 1.1rem;
+  padding: 12px 28px;
+  margin: 0 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: background-color 0.3s ease;
+}
+.controls button:hover {
+  background: #0a58ca;
+}
+/* Enhanced Certificate Styling */
+.certificate-body {
+  background: #fefae0;
+  font-family: 'Georgia', serif;
+  color: #3b2e1a;
+  padding: 40px;
+}
+
+.certificate-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  background: #fff;
+  border: 10px double #a67c00;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  text-align: center;
+  position: relative;
+}
+
+.cert-flag {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 90px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.cert-title {
+  font-size: 2.8rem;
+  color: #a65e00;
+  margin-bottom: 10px;
+}
+
+.cert-subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.cert-name {
+  font-size: 2.2rem;
+  color: #d2691e;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #a67c00;
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.cert-body,
+.cert-extra {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin: 20px 0;
+}
+
+.date-issue {
+  margin-top: 30px;
+  font-style: italic;
+  font-size: 1rem;
+  color: #5a3e1b;
+}
+
+.sign {
+  font-size: 1.3rem;
+  color: #d63384;
+  margin-top: 30px;
+}
+
+.controls {
+  text-align: center;
+  margin-top: 30px;
+}
+.controls button {
+  background: #0d6efd;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  margin: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+.controls button:hover {
+  background: #0b5ed7;
+}
+/* Indian Tricolor Glitter Title */
+.cert-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #ff9933, white, #138808);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+
+@keyframes glitterTitle {
+  0%, 100% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #ff9933, 0 0 10px #138808;
+  }
+  50% {
+    text-shadow: 0 0 10px #fff, 0 0 20px #138808, 0 0 20px #ff9933;
+  }
+}
+
+/* Tricolor Border for Certificate */
+.certificate-container {
+  border: 10px solid transparent;
+  border-image: linear-gradient(to right, #ff9933 33%, white 33%, white 66%, #138808 66%);
+  border-image-slice: 1;
+  background: #fff;
+  padding: 60px 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.15);
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+.wrapper {
+        display: flex;
+    }
+
+    .stick {
+        height: 450px;
+        width: 10px;
+        background: black;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    .flag {
+        width: 200px;
+        margin: 20px auto;
+        border-radius: 8px;
+        box-shadow: 0px 0px 90px 1px #989;
+        background-color: transparent;
+        position: relative;
+    }
+
+    .top {
+        height: 60px;
+        background-color: #ff9933
+    }
+
+    .middle {
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bottom {
+        height: 60px;
+        background-color: green
+    }
+
+    .wheel {
+        height: 43px;
+        width: 43px;
+        border: 1px solid darkblue;
+        border-radius: 45px;
+        position: relative;
+        margin: 0 auto;
+        animation-name: wheel;
+        animation-iteration-count: infinite;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+    }
+
+    .wheel .line {
+        height: 100%;
+        width: 1px;
+        display: inline-block;
+        position: absolute;
+        left: 50%;
+        background: darkblue;
+    }
+
+    .line:nth-child(1) {
+        transform: rotate(15deg)
+    }
+
+    .line:nth-child(2) {
+        transform: rotate(30deg)
+    }
+
+    .line:nth-child(3) {
+        transform: rotate(45deg)
+    }
+
+    .line:nth-child(4) {
+        transform: rotate(60deg)
+    }
+
+    .line:nth-child(5) {
+        transform: rotate(75deg)
+    }
+
+    .line:nth-child(6) {
+        transform: rotate(90deg)
+    }
+
+    .line:nth-child(7) {
+        transform: rotate(105deg)
+    }
+
+    .line:nth-child(8) {
+        transform: rotate(120deg)
+    }
+
+    .line:nth-child(9) {
+        transform: rotate(135deg)
+    }
+
+    .line:nth-child(10) {
+        transform: rotate(150deg)
+    }
+
+    .line:nth-child(11) {
+        transform: rotate(165deg)
+    }
+
+    .line:nth-child(12) {
+        transform: rotate(180deg)
+    }
+
+    @keyframes wheel {
+      0%{
+        transform: rotate(0deg);
+      }
+      100%{
+        transform: rotate(360deg);
+      }
+    }
+    .wave{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(
+          128deg, rgba(89,72,21,0) 39%, 
+          rgba(250,245,245,0.8474025974025974) 
+          46%, rgba(89,72,21,0) 53%);
+      animation-name: wavy;
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    @keyframes wavy {
+       0%{
+        background-position: 
+        -400px 0px, -400px 0px,
+        -400px 0px,-400px 0px;
+       }
+       100%{
+        background-position: 800px 0px, 
+        800px 0px, 800px 0px, 800px 0px;
+       }
+     }

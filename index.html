@@ -1,0 +1,125 @@
+<!-- Updated index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Independence Day Celebration 🇮🇳</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body class="border-india">
+
+
+  <!-- Jet Intro Overlay -->
+  <div id="jetIntro">
+    <audio id="jetSound" src="assets/jet_sound.mp3" preload="auto"></audio>
+    <div class="jet jet1"><div class="trail"></div></div>
+    <div class="jet jet2"><div class="trail"></div></div>
+    <div class="jet jet3"><div class="trail"></div></div>
+
+    <div class="india-text">INDIA</div>
+	
+  </div>
+
+  <main id="mainContent" style="display:none">
+    <audio id="bgMusic" src="assets/Sare_Jahan_Se_Acha.ogg" preload="auto" loop></audio>
+
+    <header>
+	<h1 style="display:inline;"> Celebrating 77 </h1><h2 style="display:inline;"> Glorious Years </h2><h3 style="display:inline;"> of Independence </h3>
+	  	  <div class="wrapper">
+        
+        <div class="flag">
+            <div class="wave"></div>
+            <div class="top"></div>
+            <div class="middle">
+                <div class="wheel">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+            <div class="bottom"></div>
+        </div>
+    </div>
+      
+	     <section class="intro">
+      <h4>Our Nation, Our Pride</h4>
+      <p>
+        On August 15, 1947, India emerged as a free and sovereign nation after decades of nonviolent struggle.
+        Each year, we honor the sacrifice of our freedom fighters and reaffirm our commitment to unity, progress,
+        and the spirit of “Vasudhaiva Kutumbakam” – the world is one family.
+      </p>
+      <ul>
+        <li>💪 4th Largest Military in the World</li>
+        <li>🚀 ISRO: Chandrayaan & Gaganyaan</li>
+        <li>📈 4th Largest Economy</li>
+        <li>🎖 DRDO & Make in India</li>
+        <li>🏏 Cricket World Champions</li>
+      </ul>
+    </section> 
+	 
+    </header>
+
+    <section class="countdown-section">
+      <h2>Countdown to August 15, 2025</h2>
+      <div id="countdown"></div>
+    </section>
+
+
+
+    <section class="gallery">
+      <h4>Defence Showcase</h4>
+      <div class="gallery-grid">
+        <img src="assets/soldier.jpg" alt="Soldier">
+        <img src="assets/tank.jpg" alt="Tank">
+        <img src="assets/jet.jpg" alt="Jet">
+        <img src="assets/ship.jpg" alt="Ship">
+        <img src="assets/missile.jpg" alt="Missile">
+        <img src="assets/s400.jpg" alt="S-400 System">
+        <img src="assets/army.jpg" alt="Parade">
+        <img src="assets/helicopter.jpg" alt="Helicopter">
+      </div>
+
+    </section>
+
+    <section class="achievements">
+      <h2>Achievements & Milestones</h2>
+      <ul>
+        <li>🛰️ Mars Orbiter Mission</li>
+        <li>🎬 World’s Largest Film Industry</li>
+        <li>🌾 Agricultural Innovation</li>
+        <li>💡 Startup Capital</li>
+        <li>🌐 IT & Services Hub</li>
+      </ul>
+    </section>
+     
+    <section class="form-section">
+      <h2 class="form-title">Claim Your Certificate of Patriotism</h2>
+	  
+    </div>
+      <p class="form-text">Enter your name below to receive a personalized certificate recognizing your love for our great nation.</p>
+      <form id="nameForm">
+        <input type="text" id="nameInput" placeholder="Enter Your Full Name" required>
+        <button type="submit">Generate Certificate</button>
+      </form>
+      <div id="confettiHolder"></div>
+    </section>
+
+    <footer>
+      <p>© 2025 Proud to be Indian 🇮🇳</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Certificate of Patriotism 🇮🇳</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="certificate-body">
+
+  <audio id="anthem" src="assets/Sare_Jahan_Se_Acha.ogg" preload="auto"></audio>
+
+  <div class="certificate-container" id="certificate">
+   
+
+    <h1 class="cert-title">Certificate of Patriotism</h1>
+
+    <p class="cert-subtitle">This certificate is proudly presented to</p>
+    <h2 id="certName" class="cert-name">[Name]</h2>
+
+    <p class="cert-body">
+      In recognition of your unwavering dedication to our beloved country and your heartfelt celebration
+      of the 77<sup>th</sup> Independence Day of India, we honor you with this Certificate of Patriotism.
+    </p>
+
+    <p class="cert-extra">
+      Your participation reflects the true spirit of India — unity in diversity, strength through peace,
+      and pride in our heritage. As we move forward together, your patriotic enthusiasm stands as
+      an inspiration to millions.
+    </p>
+
+    <p class="cert-extra">
+      Let this certificate be a lasting symbol of your commitment to our nation’s progress, glory,
+      and shared future. Jai Hind! 🇮🇳
+    </p>
+
+    <p class="date-issue" id="dateIssue">Issued on: </p>
+    <p class="sign">— Citizens of India —</p>
+  </div>
+
+  <div class="controls">
+    <button id="downloadPDF">Download PDF</button>
+    <button onclick="window.print()">Print Certificate</button>
+  </div>
+
+  <!-- Libraries -->
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const name = new URLSearchParams(location.search).get("name") || "Friend";
+      document.getElementById("certName").textContent = name;
+
+      const today = new Date();
+      const opts = { year: 'numeric', month: 'long', day: 'numeric' };
+      document.getElementById("dateIssue").textContent = "Issued on: " + today.toLocaleDateString("en-IN", opts);
+
+      document.getElementById("anthem").play().catch(() => {});
+      
+      const fanfare = new Audio("assets/fanfare.mp3");
+      const { jsPDF } = window.jspdf;
+      document.getElementById("downloadPDF").addEventListener("click", () => {
+        fanfare.play().catch(()=>{});
+        html2canvas(document.getElementById("certificate"), {
+          scale: 2,
+          useCORS: true,
+          allowTaint: false
+        }).then(canvas => {
+          const imgData = canvas.toDataURL("image/png");
+          const pdf = new jsPDF("p", "pt", "a4");
+          const w = pdf.internal.pageSize.getWidth();
+          const h = (canvas.height * w) / canvas.width;
+          pdf.addImage(imgData, "PNG", 0, 0, w, h);
+          pdf.save(`${name}_Certificate.pdf`);
+        }).catch(err => {
+          console.error(err);
+          alert("PDF generation failed. Please try printing instead.");
+        });
+      });
+    });
+  </script>
+</body>
+</html>
