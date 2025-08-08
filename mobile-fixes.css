@@ -1,23 +1,59 @@
 /* Mobile Gallery Fix */
 @media (max-width: 768px) {
   .gallery-container {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 15px !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 12px !important;
   }
   
   .gallery-item {
-    height: 200px !important;
+    height: 140px !important;
+  }
+  
+  .heroes-container {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 12px !important;
+  }
+  
+  .values-container {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 12px !important;
+  }
+  
+  .hero-card, .value-item {
+    padding: 15px !important;
+  }
+  
+  .hero-name, .value-item h3 {
+    font-size: 0.9rem !important;
+  }
+  
+  .hero-quote, .value-item p {
+    font-size: 0.8rem !important;
   }
 }
 
 @media (max-width: 480px) {
   .gallery-container {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+  }
+  
+  .gallery-item {
+    height: 120px !important;
+  }
+  
+  .heroes-container {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 10px !important;
   }
   
-  .gallery-item {
-    height: 180px !important;
+  .values-container {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+  
+  .hero-card, .value-item {
+    padding: 12px !important;
   }
 }
 

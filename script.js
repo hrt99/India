@@ -161,6 +161,31 @@ function setupCertificateDownload(fullName, city) {
     window.analytics.trackCertificate(fullName, city);
   }
   
+  // Setup share button after certificate is generated
+  setTimeout(() => {
+    const shareBtn = document.getElementById('shareCertificate');
+    if (shareBtn) {
+      shareBtn.onclick = () => {
+        const shareText = `I just received my Certificate of Patriotism! Proud to be Indian! 🇮🇳 #ProudIndian #JaiHind ${window.location.href}`;
+        const shareModal = document.createElement('div');
+        shareModal.innerHTML = `
+          <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000; display: flex; align-items: center; justify-content: center; padding: 20px;">
+            <div style="background: white; padding: 25px; border-radius: 15px; max-width: 350px; width: 100%; text-align: center;">
+              <h3 style="margin: 0 0 15px 0; color: #1a202c; font-size: 1.2rem;">📤 Share Certificate</h3>
+              <div style="display: flex; gap: 8px; justify-content: center; margin: 15px 0; flex-wrap: wrap;">
+                <button onclick="window.open('https://wa.me/?text=${encodeURIComponent(shareText)}', '_blank'); this.parentElement.parentElement.parentElement.remove();" style="background: #25d366; color: white; border: none; padding: 10px 14px; border-radius: 6px; cursor: pointer; font-size: 13px;">💬 WhatsApp</button>
+                <button onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}', '_blank'); this.parentElement.parentElement.parentElement.remove();" style="background: #1877f2; color: white; border: none; padding: 10px 14px; border-radius: 6px; cursor: pointer; font-size: 13px;">📘 Facebook</button>
+                <button onclick="window.open('https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}', '_blank'); this.parentElement.parentElement.parentElement.remove();" style="background: #1da1f2; color: white; border: none; padding: 10px 14px; border-radius: 6px; cursor: pointer; font-size: 13px;">🐦 Twitter</button>
+              </div>
+              <button onclick="this.parentElement.parentElement.remove()" style="background: #666; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 13px;">Close</button>
+            </div>
+          </div>
+        `;
+        document.body.appendChild(shareModal);
+      };
+    }
+  }, 200);
+  
   downloadBtn.onclick = () => {
     // Track download
     if (window.analytics) {
