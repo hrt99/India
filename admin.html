@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Independence Day Website</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .admin-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .admin-header {
+      background: linear-gradient(135deg, #ff9933, #138808);
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .admin-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .admin-header p {
+      opacity: 0.9;
+      font-size: 1.1rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 40px;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, #f8f9fa, #ffffff);
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      border-left: 5px solid #ff9933;
+      transition: transform 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .stat-card:nth-child(2) { border-left-color: #138808; }
+    .stat-card:nth-child(3) { border-left-color: #000080; }
+    .stat-card:nth-child(4) { border-left-color: #ffd700; }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .stat-change {
+      font-size: 0.9rem;
+      padding: 5px 10px;
+      border-radius: 20px;
+      background: #e8f5e8;
+      color: #2d5a2d;
+    }
+
+    .recent-activity {
+      padding: 40px;
+      border-top: 1px solid #eee;
+    }
+
+    .activity-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .activity-header h2 {
+      color: #333;
+      font-size: 1.8rem;
+    }
+
+    .refresh-btn {
+      background: linear-gradient(135deg, #ff9933, #e67e00);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .activity-list {
+      background: #f8f9fa;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .activity-item {
+      padding: 20px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .activity-item:last-child {
+      border-bottom: none;
+    }
+
+    .activity-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff9933, #ffd700);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .activity-content {
+      flex: 1;
+    }
+
+    .activity-text {
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .activity-time {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .charts-section {
+      padding: 40px;
+      border-top: 1px solid #eee;
+    }
+
+    .charts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 30px;
+    }
+
+    .chart-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .chart-title {
+      font-size: 1.3rem;
+      color: #333;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .chart-placeholder {
+      height: 200px;
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+      
+      .charts-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .admin-header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-container">
+    <div class="admin-header">
+      <h1>🇮🇳 Admin Dashboard</h1>
+      <p>Independence Day Website Analytics</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number" id="totalVisits">0</div>
+        <div class="stat-label">Total Visits</div>
+        <div class="stat-change">+12% today</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number" id="certificatesGenerated">0</div>
+        <div class="stat-label">Certificates Generated</div>
+        <div class="stat-change">+8% today</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number" id="totalDownloads">0</div>
+        <div class="stat-label">Certificate Downloads</div>
+        <div class="stat-change">+15% today</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number" id="socialShares">0</div>
+        <div class="stat-label">Social Shares</div>
+        <div class="stat-change">+22% today</div>
+      </div>
+    </div>
+
+    <div class="recent-activity">
+      <div class="activity-header">
+        <h2>Recent Activity</h2>
+        <button class="refresh-btn" onclick="refreshData()">🔄 Refresh</button>
+      </div>
+
+      <div class="activity-list" id="activityList">
+        <!-- Activity items will be populated by JavaScript -->
+      </div>
+    </div>
+
+    <div class="charts-section">
+      <h2 style="text-align: center; margin-bottom: 30px; color: #333;">Analytics Overview</h2>
+      <div class="charts-grid">
+        <div class="chart-card">
+          <div class="chart-title">Daily Visits</div>
+          <div class="chart-placeholder">Chart will show daily visit trends</div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">Certificate Generation</div>
+          <div class="chart-placeholder">Chart will show certificate generation over time</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="analytics.js"></script>
+  <script>
+    // Get real analytics data
+    function getAdminData() {
+      if (window.analytics) {
+        const stats = window.analytics.getStats();
+        return {
+          totalVisits: stats.totalVisits,
+          certificatesGenerated: stats.certificatesGenerated,
+          totalDownloads: stats.totalDownloads,
+          socialShares: stats.socialShares,
+          recentActivity: stats.recentUsers.map(user => ({
+            name: user.name || 'Anonymous User',
+            city: user.city || '',
+            action: user.action.replace('_', ' '),
+            time: getTimeAgo(user.timestamp),
+            icon: getActionIcon(user.action)
+          }))
+        };
+      }
+      return {
+        totalVisits: 0,
+        certificatesGenerated: 0,
+        totalDownloads: 0,
+        socialShares: 0,
+        recentActivity: []
+      };
+    }
+    
+    function getTimeAgo(timestamp) {
+      const now = new Date();
+      const time = new Date(timestamp);
+      const diff = Math.floor((now - time) / 1000);
+      
+      if (diff < 60) return 'Just now';
+      if (diff < 3600) return Math.floor(diff / 60) + ' minutes ago';
+      if (diff < 86400) return Math.floor(diff / 3600) + ' hours ago';
+      return Math.floor(diff / 86400) + ' days ago';
+    }
+    
+    function getActionIcon(action) {
+      const icons = {
+        'certificate_generated': '🏆',
+        'certificate_downloaded': '📄',
+        'shared_on_facebook': '📘',
+        'shared_on_twitter': '🐦',
+        'shared_on_whatsapp': '💬',
+        'shared_on_link_copy': '🔗'
+      };
+      return icons[action] || '📊';
+    }
+    
+    let adminData = getAdminData();
+
+    function updateStats() {
+      document.getElementById('totalVisits').textContent = adminData.totalVisits.toLocaleString();
+      document.getElementById('certificatesGenerated').textContent = adminData.certificatesGenerated.toLocaleString();
+      document.getElementById('totalDownloads').textContent = adminData.totalDownloads.toLocaleString();
+      document.getElementById('socialShares').textContent = adminData.socialShares.toLocaleString();
+    }
+
+    function updateActivity() {
+      const activityList = document.getElementById('activityList');
+      activityList.innerHTML = '';
+
+      adminData.recentActivity.forEach(activity => {
+        const activityItem = document.createElement('div');
+        activityItem.className = 'activity-item';
+        activityItem.innerHTML = `
+          <div class="activity-icon">${activity.icon}</div>
+          <div class="activity-content">
+            <div class="activity-text">${activity.name} from ${activity.city} ${activity.action}</div>
+            <div class="activity-time">${activity.time}</div>
+          </div>
+        `;
+        activityList.appendChild(activityItem);
+      });
+    }
+
+    function refreshData() {
+      // Get fresh real data
+      adminData = getAdminData();
+      
+      updateStats();
+      updateActivity();
+
+      // Show refresh feedback
+      const btn = document.querySelector('.refresh-btn');
+      btn.innerHTML = '✅ Updated with Real Data';
+      setTimeout(() => {
+        btn.innerHTML = '🔄 Refresh';
+      }, 2000);
+    }
+
+    // Auto-refresh every 30 seconds
+    setInterval(refreshData, 30000);
+
+    // Initialize dashboard
+    document.addEventListener('DOMContentLoaded', () => {
+      updateStats();
+      updateActivity();
+    });
+
+    // Store data in localStorage to persist across sessions
+    function saveData() {
+      localStorage.setItem('adminData', JSON.stringify(adminData));
+    }
+
+    function loadData() {
+      const saved = localStorage.getItem('adminData');
+      if (saved) {
+        adminData = JSON.parse(saved);
+      }
+    }
+
+    // Load saved data on page load
+    loadData();
+
+    // Save data when page unloads
+    window.addEventListener('beforeunload', saveData);
+  </script>
+</body>
+</html>

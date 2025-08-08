@@ -3,80 +3,771 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Certificate of Patriotism 🇮🇳</title>
+  <title>🏆 Certificate of Patriotism - Independence Day 2025</title>
   <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    /* Certificate-specific styles */
+    body {
+      background: linear-gradient(135deg, #fefae0 0%, #f9f7e8 100%);
+      font-family: 'Cinzel', serif;
+      color: #3b2e1a;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .certificate-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 15px solid transparent;
+      border-image: linear-gradient(45deg, #ff9933, #ffd700, #138808, #000080) 1;
+      border-radius: 20px;
+      padding: 60px 50px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+      position: relative;
+      text-align: center;
+    }
+
+    .certificate-container::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      background: linear-gradient(45deg, #ff9933, #ffd700, #138808, #000080);
+      border-radius: 25px;
+      z-index: -1;
+      opacity: 0.1;
+    }
+
+    .cert-header {
+      margin-bottom: 30px;
+    }
+
+    .cert-emblem {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, #ff9933, #ffd700);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      box-shadow: 0 10px 30px rgba(255, 153, 51, 0.3);
+    }
+
+    .cert-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      background: linear-gradient(45deg, #ff9933, #ffd700, #138808);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .cert-subtitle {
+      font-size: 1.4rem;
+      color: #666;
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+
+    .cert-presented-to {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 15px;
+      font-style: italic;
+    }
+
+    .cert-name {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #d2691e;
+      margin: 20px 0;
+      padding: 15px 30px;
+      border: 3px solid #d2691e;
+      border-radius: 15px;
+      display: inline-block;
+      background: linear-gradient(135deg, rgba(210, 105, 30, 0.1), rgba(255, 215, 0, 0.1));
+    }
+
+    .cert-location {
+      font-size: 1.3rem;
+      color: #777;
+      margin-bottom: 30px;
+      font-style: italic;
+    }
+
+    .cert-body {
+      font-size: 1.3rem;
+      line-height: 1.8;
+      margin: 30px 0;
+      color: #444;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cert-achievements {
+      background: rgba(255, 153, 51, 0.1);
+      border-radius: 15px;
+      padding: 25px;
+      margin: 30px 0;
+      border-left: 5px solid #ff9933;
+    }
+
+    .cert-achievements h3 {
+      color: #ff9933;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .cert-achievements ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .cert-achievements li {
+      font-size: 1.1rem;
+      margin: 8px 0;
+      color: #555;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .cert-achievements li::before {
+      content: '🏆';
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .cert-quote {
+      font-style: italic;
+      font-size: 1.2rem;
+      color: #666;
+      margin: 30px 0;
+      padding: 20px;
+      border-left: 4px solid #138808;
+      background: rgba(19, 136, 8, 0.05);
+      border-radius: 0 10px 10px 0;
+    }
+
+    .cert-footer {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .cert-date {
+      font-size: 1.1rem;
+      color: #666;
+      font-style: italic;
+    }
+
+    .cert-signature {
+      text-align: center;
+    }
+
+    .signature-line {
+      width: 200px;
+      height: 2px;
+      background: #333;
+      margin: 20px auto 10px;
+    }
+
+    .signature-text {
+      font-size: 1.1rem;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .signature-title {
+      font-size: 0.9rem;
+      color: #666;
+      font-style: italic;
+    }
+
+    .cert-seal {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, #ffd700, #ff9933);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 5px 20px rgba(255, 153, 51, 0.4);
+      animation: sealPulse 3s ease-in-out infinite;
+    }
+
+    .controls {
+      text-align: center;
+      margin: 40px 0;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .controls h3 {
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+    }
+
+    .control-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .control-btn {
+      background: linear-gradient(135deg, #0d6efd, #0b5ed7);
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+    }
+
+    .control-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(13, 110, 253, 0.4);
+    }
+
+    .control-btn.download {
+      background: linear-gradient(135deg, #198754, #157347);
+      box-shadow: 0 5px 15px rgba(25, 135, 84, 0.3);
+    }
+
+    .control-btn.download:hover {
+      box-shadow: 0 10px 25px rgba(25, 135, 84, 0.4);
+    }
+
+    .control-btn.share {
+      background: linear-gradient(135deg, #ff9933, #e67e00);
+      box-shadow: 0 5px 15px rgba(255, 153, 51, 0.3);
+    }
+
+    .control-btn.share:hover {
+      box-shadow: 0 10px 25px rgba(255, 153, 51, 0.4);
+    }
+
+    .instructions {
+      margin-top: 20px;
+      padding: 20px;
+      background: rgba(255, 193, 7, 0.1);
+      border-radius: 10px;
+      border-left: 4px solid #ffc107;
+    }
+
+    .instructions h4 {
+      color: #856404;
+      margin-bottom: 10px;
+    }
+
+    .instructions p {
+      color: #664d03;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 5px 0;
+    }
+
+    .back-link {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: linear-gradient(135deg, #6c757d, #495057);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 5px 15px rgba(108, 117, 125, 0.3);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .back-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(108, 117, 125, 0.4);
+      color: white;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: white !important;
+        padding: 0 !important;
+      }
+      
+      .controls,
+      .back-link {
+        display: none !important;
+      }
+      
+      .certificate-container {
+        box-shadow: none !important;
+        border: 10px solid #333 !important;
+        border-image: none !important;
+        margin: 0 !important;
+        max-width: none !important;
+      }
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .certificate-container {
+        padding: 40px 30px;
+        margin: 10px;
+      }
+      
+      .cert-title {
+        font-size: 2.5rem;
+      }
+      
+      .cert-name {
+        font-size: 2rem;
+        padding: 10px 20px;
+      }
+      
+      .cert-footer {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .cert-seal {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 20px auto;
+      }
+      
+      .control-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .control-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+    }
+
+    @keyframes sealPulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 5px 20px rgba(255, 153, 51, 0.4);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 8px 30px rgba(255, 153, 51, 0.6);
+      }
+    }
+  </style>
 </head>
-<body class="certificate-body">
+<body>
+  <a href="index.html" class="back-link">← Back to Celebration</a>
 
   <audio id="anthem" src="assets/Sare_Jahan_Se_Acha.ogg" preload="auto"></audio>
 
   <div class="certificate-container" id="certificate">
-   
+    <div class="cert-seal">🇮🇳</div>
+    
+    <div class="cert-header">
+      <div class="cert-emblem">🏆</div>
+      <h1 class="cert-title">Certificate of Patriotism</h1>
+      <p class="cert-subtitle">Republic of India • Independence Day 2025</p>
+    </div>
 
-    <h1 class="cert-title">Certificate of Patriotism</h1>
+    <p class="cert-presented-to">This certificate is proudly presented to</p>
+    
+    <div class="cert-name" id="certName">[Name]</div>
+    <div class="cert-location" id="certLocation">of [Location]</div>
 
-    <p class="cert-subtitle">This certificate is proudly presented to</p>
-    <h2 id="certName" class="cert-name">[Name]</h2>
+    <div class="cert-body">
+      <p>
+        In recognition of your unwavering dedication to our beloved motherland and your heartfelt 
+        celebration of the <strong>78th Independence Day</strong> of India, we honor you with this 
+        Certificate of Patriotism.
+      </p>
+      
+      <div class="cert-achievements">
+        <h3>Your Patriotic Spirit Reflects:</h3>
+        <ul>
+          <li>Deep love and respect for our national heritage</li>
+          <li>Commitment to the values of unity, integrity, and progress</li>
+          <li>Pride in India's achievements and cultural diversity</li>
+          <li>Dedication to building a stronger, more prosperous nation</li>
+        </ul>
+      </div>
 
-    <p class="cert-body">
-      In recognition of your unwavering dedication to our beloved country and your heartfelt celebration
-      of the 77<sup>th</sup> Independence Day of India, we honor you with this Certificate of Patriotism.
-    </p>
+      <div class="cert-quote">
+        "The best way to find yourself is to lose yourself in the service of others." 
+        <br><strong>- Mahatma Gandhi</strong>
+      </div>
 
-    <p class="cert-extra">
-      Your participation reflects the true spirit of India — unity in diversity, strength through peace,
-      and pride in our heritage. As we move forward together, your patriotic enthusiasm stands as
-      an inspiration to millions.
-    </p>
+      <p>
+        Your participation in this Independence Day celebration stands as a testament to the 
+        enduring spirit of patriotism that makes our nation great. As we move forward together, 
+        your enthusiasm and love for India inspire countless others to join in our shared journey 
+        toward progress and prosperity.
+      </p>
 
-    <p class="cert-extra">
-      Let this certificate be a lasting symbol of your commitment to our nation’s progress, glory,
-      and shared future. Jai Hind! 🇮🇳
-    </p>
+      <p>
+        Let this certificate serve as a lasting reminder of your commitment to our nation's 
+        values and your role in preserving the legacy of freedom that our heroes fought so 
+        valiantly to achieve.
+      </p>
 
-    <p class="date-issue" id="dateIssue">Issued on: </p>
-    <p class="sign">— Citizens of India —</p>
+      <p style="font-weight: 600; color: #ff9933; font-size: 1.4rem; margin-top: 30px;">
+        🇮🇳 Jai Hind! Vande Mataram! 🇮🇳
+      </p>
+    </div>
+
+    <div class="cert-footer">
+      <div class="cert-date" id="dateIssue">
+        Issued on: [Date]
+      </div>
+      
+      <div class="cert-signature">
+        <div class="signature-line"></div>
+        <div class="signature-text">Citizens of India</div>
+        <div class="signature-title">In Unity and Pride</div>
+      </div>
+    </div>
   </div>
 
   <div class="controls">
-    <button id="downloadPDF">Download PDF</button>
-    <button onclick="window.print()">Print Certificate</button>
+    <h3>📜 Your Certificate is Ready!</h3>
+    <div class="control-buttons">
+      <button class="control-btn download" onclick="downloadPDF()">
+        <span>📄</span>
+        <span>Download PDF</span>
+      </button>
+      <button class="control-btn" onclick="printCertificate()">
+        <span>🖨️</span>
+        <span>Print Certificate</span>
+      </button>
+      <button class="control-btn share" onclick="shareCertificate()">
+        <span>📤</span>
+        <span>Share Achievement</span>
+      </button>
+    </div>
+    
+    <div class="instructions">
+      <h4>📱 Mobile Users:</h4>
+      <p><strong>To save as PDF:</strong> Tap "Print Certificate" → Select "Save as PDF" or "Print to PDF"</p>
+      <p><strong>To share:</strong> Use the "Share Achievement" button to post on social media</p>
+      <p><strong>High Quality:</strong> For best results, use landscape orientation when printing</p>
+    </div>
   </div>
 
-  <!-- Libraries -->
-  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const name = new URLSearchParams(location.search).get("name") || "Friend";
+      // Get parameters from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const name = urlParams.get("name") || "Proud Indian";
+      const city = urlParams.get("city") || "India";
+
+      // Update certificate content
       document.getElementById("certName").textContent = name;
+      document.getElementById("certLocation").textContent = `of ${city}`;
 
+      // Set current date
       const today = new Date();
-      const opts = { year: 'numeric', month: 'long', day: 'numeric' };
-      document.getElementById("dateIssue").textContent = "Issued on: " + today.toLocaleDateString("en-IN", opts);
+      const options = { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric',
+        timeZone: 'Asia/Kolkata'
+      };
+      const formattedDate = today.toLocaleDateString("en-IN", options);
+      document.getElementById("dateIssue").textContent = `Issued on: ${formattedDate}`;
 
-      document.getElementById("anthem").play().catch(() => {});
+      // Play anthem
+      const anthem = document.getElementById("anthem");
+      anthem.volume = 0.4;
+      anthem.play().catch(() => console.log("Anthem autoplay blocked"));
+
+      // Add certificate generation animation
+      const certificate = document.getElementById("certificate");
+      certificate.style.opacity = "0";
+      certificate.style.transform = "scale(0.9)";
+      certificate.style.transition = "all 1s ease-out";
       
-      const fanfare = new Audio("assets/fanfare.mp3");
-      const { jsPDF } = window.jspdf;
-      document.getElementById("downloadPDF").addEventListener("click", () => {
-        fanfare.play().catch(()=>{});
-        html2canvas(document.getElementById("certificate"), {
-          scale: 2,
-          useCORS: true,
-          allowTaint: false
-        }).then(canvas => {
-          const imgData = canvas.toDataURL("image/png");
-          const pdf = new jsPDF("p", "pt", "a4");
-          const w = pdf.internal.pageSize.getWidth();
-          const h = (canvas.height * w) / canvas.width;
-          pdf.addImage(imgData, "PNG", 0, 0, w, h);
-          pdf.save(`${name}_Certificate.pdf`);
-        }).catch(err => {
-          console.error(err);
-          alert("PDF generation failed. Please try printing instead.");
+      setTimeout(() => {
+        certificate.style.opacity = "1";
+        certificate.style.transform = "scale(1)";
+      }, 300);
+    });
+
+    // Download PDF function
+    function downloadPDF() {
+      const certificate = document.getElementById("certificate");
+      const controls = document.querySelector(".controls");
+      const backLink = document.querySelector(".back-link");
+      
+      // Hide controls temporarily
+      controls.style.display = "none";
+      backLink.style.display = "none";
+      
+      // Configure html2canvas options
+      const options = {
+        scale: 2, // Higher quality
+        useCORS: true,
+        allowTaint: true,
+        backgroundColor: "#ffffff",
+        width: certificate.offsetWidth,
+        height: certificate.offsetHeight
+      };
+      
+      html2canvas(certificate, options).then(canvas => {
+        const imgData = canvas.toDataURL('image/png');
+        
+        // Create PDF
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF({
+          orientation: 'landscape',
+          unit: 'mm',
+          format: 'a4'
         });
+        
+        // Calculate dimensions to fit A4
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = pdf.internal.pageSize.getHeight();
+        const imgWidth = canvas.width;
+        const imgHeight = canvas.height;
+        const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
+        const imgX = (pdfWidth - imgWidth * ratio) / 2;
+        const imgY = (pdfHeight - imgHeight * ratio) / 2;
+        
+        pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
+        
+        // Get name for filename
+        const name = document.getElementById("certName").textContent.replace(/[^a-zA-Z0-9]/g, '_');
+        pdf.save(`Independence_Day_Certificate_${name}.pdf`);
+        
+        // Show controls again
+        controls.style.display = "block";
+        backLink.style.display = "block";
+        
+        // Show success message
+        showNotification("📄 Certificate downloaded successfully!");
+      }).catch(error => {
+        console.error('PDF generation failed:', error);
+        // Fallback to print
+        printCertificate();
+        showNotification("⚠️ PDF download failed. Please use Print option.");
       });
+    }
+
+    // Print certificate function
+    function printCertificate() {
+      // Trigger browser print dialog
+      window.print();
+      showNotification("🖨️ Print dialog opened!");
+    }
+
+    // Share certificate function
+    function shareCertificate() {
+      const name = document.getElementById("certName").textContent;
+      const text = `🏆 I just received my Certificate of Patriotism for India's Independence Day! 🇮🇳 Proud to celebrate our nation's 78 years of freedom. Jai Hind! #IndependenceDay #ProudIndian #JaiHind`;
+      const url = window.location.href;
+      
+      if (navigator.share) {
+        // Use native sharing if available
+        navigator.share({
+          title: 'Certificate of Patriotism - Independence Day 2025',
+          text: text,
+          url: url
+        }).then(() => {
+          showNotification("📤 Certificate shared successfully!");
+        }).catch(() => {
+          fallbackShare(text, url);
+        });
+      } else {
+        fallbackShare(text, url);
+      }
+    }
+
+    // Fallback sharing options
+    function fallbackShare(text, url) {
+      const shareOptions = [
+        {
+          name: 'WhatsApp',
+          url: `https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`,
+          icon: '💬'
+        },
+        {
+          name: 'Twitter',
+          url: `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`,
+          icon: '🐦'
+        },
+        {
+          name: 'Facebook',
+          url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(text)}`,
+          icon: '📘'
+        }
+      ];
+      
+      const modal = createShareModal(shareOptions);
+      document.body.appendChild(modal);
+    }
+
+    // Create share modal
+    function createShareModal(options) {
+      const modal = document.createElement('div');
+      modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+      `;
+      
+      const content = document.createElement('div');
+      content.style.cssText = `
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        max-width: 400px;
+        width: 90%;
+      `;
+      
+      content.innerHTML = `
+        <h3 style="margin-bottom: 20px; color: #333;">Share Your Achievement</h3>
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+          ${options.map(option => `
+            <a href="${option.url}" target="_blank" style="
+              display: flex;
+              align-items: center;
+              gap: 15px;
+              padding: 15px;
+              background: linear-gradient(135deg, #ff9933, #ffd700);
+              color: white;
+              text-decoration: none;
+              border-radius: 10px;
+              font-weight: 600;
+              transition: transform 0.3s ease;
+            " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+              <span style="font-size: 1.5rem;">${option.icon}</span>
+              <span>Share on ${option.name}</span>
+            </a>
+          `).join('')}
+        </div>
+        <button onclick="this.closest('.modal').remove()" style="
+          margin-top: 20px;
+          background: #6c757d;
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 5px;
+          cursor: pointer;
+        ">Close</button>
+      `;
+      
+      modal.className = 'modal';
+      modal.appendChild(content);
+      
+      // Close on backdrop click
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.remove();
+        }
+      });
+      
+      return modal;
+    }
+
+    // Notification function
+    function showNotification(message) {
+      const notification = document.createElement('div');
+      notification.textContent = message;
+      notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #198754, #157347);
+        color: white;
+        padding: 15px 25px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        z-index: 10001;
+        font-weight: 600;
+        animation: slideInRight 0.5s ease-out;
+      `;
+      
+      // Add animation
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes slideInRight {
+          from { transform: translateX(100%); opacity: 0; }
+          to { transform: translateX(0); opacity: 1; }
+        }
+      `;
+      document.head.appendChild(style);
+      
+      document.body.appendChild(notification);
+      
+      // Remove after 4 seconds
+      setTimeout(() => {
+        notification.style.animation = 'slideInRight 0.5s ease-out reverse';
+        setTimeout(() => {
+          if (notification.parentNode) {
+            notification.remove();
+          }
+          if (style.parentNode) {
+            style.remove();
+          }
+        }, 500);
+      }, 4000);
+    }
+
+    // Add keyboard shortcuts
+    document.addEventListener('keydown', (e) => {
+      if (e.ctrlKey || e.metaKey) {
+        switch(e.key.toLowerCase()) {
+          case 'p':
+            e.preventDefault();
+            printCertificate();
+            break;
+          case 's':
+            e.preventDefault();
+            downloadPDF();
+            break;
+        }
+      }
     });
   </script>
 </body>

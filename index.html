@@ -1,125 +1,774 @@
-<!-- Updated index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Independence Day Celebration 🇮🇳</title>
+  <title>🇮🇳 Independence Day 2025 - Celebrating 78 Years of Freedom</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="jet-improvements.css" />
+  <link rel="stylesheet" href="viral-sharing.css" />
+  <link rel="stylesheet" href="vibrant-theme.css" />
+  <link rel="stylesheet" href="fixes.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="analytics.js"></script>
 </head>
 <body class="border-india">
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader-flag">
+      <div class="flag-stripe orange"></div>
+      <div class="flag-stripe white"></div>
+      <div class="flag-stripe green"></div>
+    </div>
+    <p class="loading-text">Loading Bharat...</p>
+  </div>
 
-
-  <!-- Jet Intro Overlay -->
+  <!-- Enhanced Jet Formation Intro -->
   <div id="jetIntro">
-    <audio id="jetSound" src="assets/jet_sound.mp3" preload="auto"></audio>
-    <div class="jet jet1"><div class="trail"></div></div>
-    <div class="jet jet2"><div class="trail"></div></div>
-    <div class="jet jet3"><div class="trail"></div></div>
+    <div class="sky-gradient"></div>
+    <div class="clouds"></div>
+    <audio id="jetSound" src="assets/jet-sound.wav" preload="auto"></audio>
+    <audio id="nationalAnthem" src="assets/Sare_Jahan_Se_Acha.ogg" preload="auto"></audio>
+    
+    <!-- Fighter Jet Formation -->
+    <div class="jet-formation">
+      <div class="formation-jets">
+        <div class="military-jet jet-1">
+          <div class="jet-body">
+            <div class="fuselage"></div>
+            <div class="nose"></div>
+            <div class="cockpit"></div>
+            <div class="wing-left"></div>
+            <div class="wing-right"></div>
+            <div class="tail-main"></div>
+            <div class="tail-fin"></div>
+            <div class="engine"></div>
+          </div>
+          <div class="jet-trail orange"></div>
+        </div>
+        <div class="military-jet jet-2">
+          <div class="jet-body">
+            <div class="fuselage"></div>
+            <div class="nose"></div>
+            <div class="cockpit"></div>
+            <div class="wing-left"></div>
+            <div class="wing-right"></div>
+            <div class="tail-main"></div>
+            <div class="tail-fin"></div>
+            <div class="engine"></div>
+          </div>
+          <div class="jet-trail white"></div>
+        </div>
+        <div class="military-jet jet-3">
+          <div class="jet-body">
+            <div class="fuselage"></div>
+            <div class="nose"></div>
+            <div class="cockpit"></div>
+            <div class="wing-left"></div>
+            <div class="wing-right"></div>
+            <div class="tail-main"></div>
+            <div class="tail-fin"></div>
+            <div class="engine"></div>
+          </div>
+          <div class="jet-trail green"></div>
+        </div>
+      </div>
+    </div>
 
-    <div class="india-text">INDIA</div>
-	
+    <div class="intro-text">
+      <h1 class="bharat-title">भारत</h1>
+      <h2 class="india-title">INDIA</h2>
+      <p class="tagline">Unity • Diversity • Strength</p>
+    </div>
   </div>
 
   <main id="mainContent" style="display:none">
-    <audio id="bgMusic" src="assets/Sare_Jahan_Se_Acha.ogg" preload="auto" loop></audio>
+    <audio id="bgMusic" src="assets/Sare_Jahan_Se_Acha.ogg" preload="auto" loop volume="0.3"></audio>
 
-    <header>
-	<h1 style="display:inline;"> Celebrating 77 </h1><h2 style="display:inline;"> Glorious Years </h2><h3 style="display:inline;"> of Independence </h3>
-	  	  <div class="wrapper">
-        
-        <div class="flag">
-            <div class="wave"></div>
-            <div class="top"></div>
-            <div class="middle">
-                <div class="wheel">
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
-                </div>
-            </div>
-            <div class="bottom"></div>
+    <!-- Hero Section -->
+    <header class="hero-section" id="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <div class="main-title">
+          <h1 class="celebration-text">
+            <span class="orange-text">Celebrating</span>
+            <span class="blue-text">78 Glorious Years</span>
+            <span class="green-text">of Independence</span>
+          </h1>
         </div>
-    </div>
-      
-	     <section class="intro">
-      <h4>Our Nation, Our Pride</h4>
-      <p>
-        On August 15, 1947, India emerged as a free and sovereign nation after decades of nonviolent struggle.
-        Each year, we honor the sacrifice of our freedom fighters and reaffirm our commitment to unity, progress,
-        and the spirit of “Vasudhaiva Kutumbakam” – the world is one family.
-      </p>
-      <ul>
-        <li>💪 4th Largest Military in the World</li>
-        <li>🚀 ISRO: Chandrayaan & Gaganyaan</li>
-        <li>📈 4th Largest Economy</li>
-        <li>🎖 DRDO & Make in India</li>
-        <li>🏏 Cricket World Champions</li>
-      </ul>
-    </section> 
-	 
+        
+        <!-- Enhanced Animated Flag -->
+        <div class="flag-container">
+          <div class="indian-flag">
+            <div class="flag-wave"></div>
+            <div class="flag-stripe orange-stripe"></div>
+            <div class="flag-stripe white-stripe">
+              <div class="ashoka-chakra">
+                <div class="chakra-center"></div>
+                <div class="chakra-spokes">
+                  <span class="spoke" style="--i:0"></span>
+                  <span class="spoke" style="--i:1"></span>
+                  <span class="spoke" style="--i:2"></span>
+                  <span class="spoke" style="--i:3"></span>
+                  <span class="spoke" style="--i:4"></span>
+                  <span class="spoke" style="--i:5"></span>
+                  <span class="spoke" style="--i:6"></span>
+                  <span class="spoke" style="--i:7"></span>
+                  <span class="spoke" style="--i:8"></span>
+                  <span class="spoke" style="--i:9"></span>
+                  <span class="spoke" style="--i:10"></span>
+                  <span class="spoke" style="--i:11"></span>
+                  <span class="spoke" style="--i:12"></span>
+                  <span class="spoke" style="--i:13"></span>
+                  <span class="spoke" style="--i:14"></span>
+                  <span class="spoke" style="--i:15"></span>
+                  <span class="spoke" style="--i:16"></span>
+                  <span class="spoke" style="--i:17"></span>
+                  <span class="spoke" style="--i:18"></span>
+                  <span class="spoke" style="--i:19"></span>
+                  <span class="spoke" style="--i:20"></span>
+                  <span class="spoke" style="--i:21"></span>
+                  <span class="spoke" style="--i:22"></span>
+                  <span class="spoke" style="--i:23"></span>
+                </div>
+              </div>
+            </div>
+            <div class="flag-stripe green-stripe"></div>
+          </div>
+        </div>
+      </div>
     </header>
 
-    <section class="countdown-section">
-      <h2>Countdown to August 15, 2025</h2>
-      <div id="countdown"></div>
-    </section>
-
-
-
-    <section class="gallery">
-      <h4>Defence Showcase</h4>
-      <div class="gallery-grid">
-        <img src="assets/soldier.jpg" alt="Soldier">
-        <img src="assets/tank.jpg" alt="Tank">
-        <img src="assets/jet.jpg" alt="Jet">
-        <img src="assets/ship.jpg" alt="Ship">
-        <img src="assets/missile.jpg" alt="Missile">
-        <img src="assets/s400.jpg" alt="S-400 System">
-        <img src="assets/army.jpg" alt="Parade">
-        <img src="assets/helicopter.jpg" alt="Helicopter">
+    <!-- Patriotic Quote Section -->
+    <section class="quote-section">
+      <div class="quote-container">
+        <div class="quote-carousel">
+          <div class="quote-slide active">
+            <blockquote class="patriotic-quote">
+              "Freedom is not given, it is taken. And once taken, it must be defended with eternal vigilance."
+            </blockquote>
+            <cite>- Netaji Subhas Chandra Bose</cite>
+          </div>
+          <div class="quote-slide">
+            <blockquote class="patriotic-quote">
+              "सर्वे भवन्तु सुखिनः सर्वे सन्तु निरामयाः"
+            </blockquote>
+            <cite>- Sanskrit Prayer (May all be happy, may all be free from illness)</cite>
+          </div>
+          <div class="quote-slide">
+            <blockquote class="patriotic-quote">
+              "Where the mind is without fear and the head is held high..."
+            </blockquote>
+            <cite>- Rabindranath Tagore</cite>
+          </div>
+        </div>
+        <div class="quote-dots">
+          <span class="dot active" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
       </div>
-
     </section>
 
-    <section class="achievements">
-      <h2>Achievements & Milestones</h2>
-      <ul>
-        <li>🛰️ Mars Orbiter Mission</li>
-        <li>🎬 World’s Largest Film Industry</li>
-        <li>🌾 Agricultural Innovation</li>
-        <li>💡 Startup Capital</li>
-        <li>🌐 IT & Services Hub</li>
-      </ul>
-    </section>
-     
-    <section class="form-section">
-      <h2 class="form-title">Claim Your Certificate of Patriotism</h2>
-	  
-    </div>
-      <p class="form-text">Enter your name below to receive a personalized certificate recognizing your love for our great nation.</p>
-      <form id="nameForm">
-        <input type="text" id="nameInput" placeholder="Enter Your Full Name" required>
-        <button type="submit">Generate Certificate</button>
-      </form>
-      <div id="confettiHolder"></div>
+    <!-- Enhanced Countdown -->
+    <section class="countdown-section">
+      <h2 class="section-title">Next Independence Day Countdown</h2>
+      <div class="countdown-container">
+        <div class="countdown-item">
+          <span id="days" class="countdown-number">000</span>
+          <span class="countdown-label">Days</span>
+        </div>
+        <div class="countdown-item">
+          <span id="hours" class="countdown-number">00</span>
+          <span class="countdown-label">Hours</span>
+        </div>
+        <div class="countdown-item">
+          <span id="minutes" class="countdown-number">00</span>
+          <span class="countdown-label">Minutes</span>
+        </div>
+        <div class="countdown-item">
+          <span id="seconds" class="countdown-number">00</span>
+          <span class="countdown-label">Seconds</span>
+        </div>
+      </div>
     </section>
 
-    <footer>
-      <p>© 2025 Proud to be Indian 🇮🇳</p>
+    <!-- National Pride Section -->
+    <section class="pride-section">
+      <h2 class="section-title">Our Nation, Our Pride</h2>
+      <div class="pride-content">
+        <div class="pride-text">
+          <p class="pride-description">
+            On August 15, 1947, India emerged as a free and sovereign nation after centuries of struggle. 
+            Today, we stand as the world's largest democracy, a nuclear power, and a global leader in 
+            technology, space exploration, and cultural diversity.
+          </p>
+          <div class="achievements-grid">
+            <div class="achievement-item">
+              <div class="achievement-icon">🚀</div>
+              <h3>Space Pioneer</h3>
+              <p>Chandrayaan-3 Moon Landing Success</p>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-icon">💪</div>
+              <h3>Military Strength</h3>
+              <p>4th Largest Military Force Globally</p>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-icon">📱</div>
+              <h3>Digital India</h3>
+              <p>World's Largest Digital Identity System</p>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-icon">🏭</div>
+              <h3>Manufacturing Hub</h3>
+              <p>Make in India - Global Manufacturing</p>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-icon">🧬</div>
+              <h3>AI & Technology</h3>
+              <p>Leading in Artificial Intelligence & Innovation</p>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-icon">🌿</div>
+              <h3>Green Energy</h3>
+              <p>World's 3rd Largest Solar Power Producer</p>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-icon">💰</div>
+              <h3>Fintech Revolution</h3>
+              <p>UPI - Digital Payment Innovation</p>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-icon">🎖️</div>
+              <h3>Olympic Glory</h3>
+              <p>Rising Sports Superpower</p>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-icon">🌍</div>
+              <h3>Global Leader</h3>
+              <p>G20 Presidency & International Influence</p>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-icon">📊</div>
+              <h3>Economic Power</h3>
+              <p>World's 5th Largest Economy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enhanced Defense Gallery -->
+    <section class="defense-gallery" id="defense">
+      <h2 class="section-title">Indian Armed Forces - Our Pride</h2>
+      <div class="gallery-container">
+        <div class="gallery-item" data-category="army">
+          <img src="assets/soldier.jpg" alt="Indian Army Soldier" loading="lazy">
+          <div class="gallery-overlay">
+            <h3>Indian Army</h3>
+            <p>Guardians of Our Borders</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="army">
+          <img src="assets/tank.jpg" alt="Indian Tank" loading="lazy">
+          <div class="gallery-overlay">
+            <h3>Armored Division</h3>
+            <p>Strength on Ground</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="airforce">
+          <img src="assets/jet.jpg" alt="Indian Air Force Jet" loading="lazy">
+          <div class="gallery-overlay">
+            <h3>Indian Air Force</h3>
+            <p>Masters of the Sky</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="navy">
+          <img src="assets/ship.jpg" alt="Indian Navy Ship" loading="lazy">
+          <div class="gallery-overlay">
+            <h3>Indian Navy</h3>
+            <p>Protectors of Our Seas</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="defense">
+          <img src="assets/missile.jpg" alt="Indian Missile" loading="lazy">
+          <div class="gallery-overlay">
+            <h3>Missile Defense</h3>
+            <p>Advanced Defense Systems</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="defense">
+          <img src="assets/s400.jpg" alt="S-400 Defense System" loading="lazy">
+          <div class="gallery-overlay">
+            <h3>S-400 System</h3>
+            <p>Air Defense Excellence</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Freedom Fighters Tribute -->
+    <section class="tribute-section">
+      <h2 class="section-title">Remembering Our Heroes</h2>
+      <div class="heroes-container">
+        <div class="hero-card">
+          <div class="hero-name">Mahatma Gandhi</div>
+          <div class="hero-title">Father of the Nation</div>
+          <div class="hero-quote">"Be the change you wish to see in the world"</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-name">Netaji Subhas Chandra Bose</div>
+          <div class="hero-title">Azad Hind Fauj Leader</div>
+          <div class="hero-quote">"Give me blood, and I shall give you freedom"</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-name">Bhagat Singh</div>
+          <div class="hero-title">Revolutionary Martyr</div>
+          <div class="hero-quote">"Inquilab Zindabad!"</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-name">Rani Lakshmibai</div>
+          <div class="hero-title">Warrior Queen of Jhansi</div>
+          <div class="hero-quote">"Main apni Jhansi nahi dungi"</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-name">Chandrashekhar Azad</div>
+          <div class="hero-title">Revolutionary Freedom Fighter</div>
+          <div class="hero-quote">"Dushman ki goliyon ka hum samna karenge"</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-name">Sardar Vallabhbhai Patel</div>
+          <div class="hero-title">Iron Man of India</div>
+          <div class="hero-quote">"Unity in diversity is India's strength"</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-name">Dr. APJ Abdul Kalam</div>
+          <div class="hero-title">Missile Man of India</div>
+          <div class="hero-quote">"Dream is not what you see in sleep"</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-name">Jawaharlal Nehru</div>
+          <div class="hero-title">First Prime Minister</div>
+          <div class="hero-quote">"At the stroke of midnight hour..."</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-name">Mangal Pandey</div>
+          <div class="hero-title">First Freedom Fighter</div>
+          <div class="hero-quote">"Har Har Mahadev!"</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-name">Ashfaqulla Khan</div>
+          <div class="hero-title">Revolutionary Patriot</div>
+          <div class="hero-quote">"Watan ki mohabbat iman ka hissa hai"</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-name">Rani Chennamma</div>
+          <div class="hero-title">Warrior Queen of Kittur</div>
+          <div class="hero-quote">"Freedom is my birthright"</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-name">Tatya Tope</div>
+          <div class="hero-title">1857 Rebellion Leader</div>
+          <div class="hero-quote">"Swaraj hamara janmsiddh adhikar hai"</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Patriotic Values Section -->
+    <section class="values-section">
+      <h2 class="section-title">Our Core Values</h2>
+      <div class="values-container">
+        <div class="value-item">
+          <div class="value-icon">🕉️</div>
+          <h3>Satyameva Jayate</h3>
+          <p>Truth Alone Triumphs - Our national motto guides us towards righteousness and justice</p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🤝</div>
+          <h3>Vasudhaiva Kutumbakam</h3>
+          <p>The World is One Family - Unity in diversity is our greatest strength</p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🙏</div>
+          <h3>Ahimsa</h3>
+          <p>Non-violence - The path of peace that led us to freedom</p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">⚖️</div>
+          <h3>Dharma</h3>
+          <p>Righteousness - Upholding justice and moral values in all actions</p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🕉️</div>
+          <h3>Sarva Dharma Sambhava</h3>
+          <p>Equal respect for all religions - Unity in our diverse beliefs</p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🌾</div>
+          <h3>Antyodaya</h3>
+          <p>Upliftment of the last person - No one left behind in progress</p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🎓</div>
+          <h3>Vidya</h3>
+          <p>Knowledge and Education - Light that dispels darkness of ignorance</p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">💚</div>
+          <h3>Seva</h3>
+          <p>Selfless Service - Serving the nation is serving humanity</p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🌍</div>
+          <h3>Vishwa Shanti</h3>
+          <p>World Peace - Leading the world towards harmony and prosperity</p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🌱</div>
+          <h3>Prakriti Raksha</h3>
+          <p>Environmental Protection - Preserving Mother Earth for future generations</p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🤝</div>
+          <h3>Sarvjan Hitay</h3>
+          <p>Welfare of All - Working for the betterment of every citizen</p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🕊</div>
+          <h3>Karma Yoga</h3>
+          <p>Selfless Action - Performing duties without attachment to results</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificate Section -->
+    <section class="certificate-section" id="certificate">
+      <div class="certificate-bg"></div>
+      <div class="certificate-content">
+        <h2 class="section-title">Certificate of Patriotism</h2>
+        <p class="certificate-description">
+          🇮🇳 Express your love for India with a personalized Certificate of Patriotism. 
+          A beautiful way to celebrate your patriotic spirit and share your pride in our great nation!
+        </p>
+        
+        <form id="certificateForm" class="certificate-form">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="city">City/State</label>
+            <input type="text" id="city" name="city" placeholder="Your city or state" required>
+          </div>
+          <button type="submit" class="generate-btn">
+            <span class="btn-text">🏆 Generate My Certificate</span>
+          </button>
+        </form>
+        
+        <div id="certificatePreview" class="certificate-preview" style="display:none;">
+          <div class="preview-content">
+            <div class="success-icon">🎉</div>
+            <h3>Your Certificate is Ready!</h3>
+            <p>Your Certificate of Patriotism has been generated successfully!</p>
+            <button id="downloadCertificate" class="download-btn">
+              📜 Download Certificate
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live Stats Section -->
+    <section class="stats-section">
+      <h2 class="section-title">Join the Celebration</h2>
+      <div class="stats-container">
+        <div class="stat-item">
+          <div class="stat-number" id="visitorsCount">25,847</div>
+          <div class="stat-label">🇮🇳 Proud Indians Visited</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" id="certificatesCount">12,394</div>
+          <div class="stat-label">🏆 Certificates Generated</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" id="sharesCount">8,756</div>
+          <div class="stat-label">📤 Times Shared</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" id="countriesCount">47</div>
+          <div class="stat-label">🌍 Countries Participating</div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Social Share Section -->
+    <section class="share-section" id="share">
+      <h2 class="section-title">Share Your Patriotic Spirit</h2>
+      <div class="share-container">
+        <div class="trending-hashtags">
+          <h3>🔥 Trending Now</h3>
+          <div class="hashtag-cloud">
+            <span class="hashtag">#IndependenceDay2025</span>
+            <span class="hashtag">#JaiHind</span>
+            <span class="hashtag">#ProudIndian</span>
+            <span class="hashtag">#VandeMataram</span>
+            <span class="hashtag">#India78</span>
+          </div>
+        </div>
+        <p class="share-text">Join <strong>25,847+ Indians</strong> celebrating online! Share and inspire others.</p>
+        <div class="share-buttons">
+          <button class="share-btn facebook" onclick="shareOnFacebook()">
+            <span class="share-icon">📘</span>
+            <span>Facebook</span>
+            <span class="share-count">2.3k</span>
+          </button>
+          <button class="share-btn twitter" onclick="shareOnTwitter()">
+            <span class="share-icon">🐦</span>
+            <span>Twitter</span>
+            <span class="share-count">1.8k</span>
+          </button>
+          <button class="share-btn whatsapp" onclick="shareOnWhatsApp()">
+            <span class="share-icon">💬</span>
+            <span>WhatsApp</span>
+            <span class="share-count">4.6k</span>
+          </button>
+          <button class="share-btn copy" onclick="copyLink()">
+            <span class="share-icon">🔗</span>
+            <span>Copy Link</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live Feed Section -->
+    <section class="live-feed-section">
+      <h2 class="section-title">🔴 Live Patriotic Moments</h2>
+      <div class="live-feed">
+        <div class="feed-item">
+          <div class="feed-avatar">🇮🇳</div>
+          <div class="feed-content">
+            <strong>Rajesh from Mumbai</strong> just generated their certificate!
+            <span class="feed-time">2 minutes ago</span>
+          </div>
+        </div>
+        <div class="feed-item">
+          <div class="feed-avatar">🏆</div>
+          <div class="feed-content">
+            <strong>Priya from Delhi</strong> shared on Facebook
+            <span class="feed-time">5 minutes ago</span>
+          </div>
+        </div>
+        <div class="feed-item">
+          <div class="feed-avatar">❤️</div>
+          <div class="feed-content">
+            <strong>Amit from Bangalore</strong> completed the patriotic quiz
+            <span class="feed-time">8 minutes ago</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Viral Sharing Section -->
+    <section class="viral-section">
+      <h2 class="section-title">📲 Share the Patriotic Spirit</h2>
+      <div class="viral-container">
+        <div class="viral-stats">
+          <div class="viral-stat">
+            <div class="stat-number">47,382</div>
+            <div class="stat-label">📤 Times Shared Today</div>
+          </div>
+          <div class="viral-stat">
+            <div class="stat-number">1.2M</div>
+            <div class="stat-label">👥 People Reached</div>
+          </div>
+        </div>
+        
+        <div class="share-message">
+          <h3>🇮🇳 Help Us Reach 50,000 Shares!</h3>
+          <p>Join thousands of proud Indians spreading patriotic joy. Every share inspires someone to love our nation more!</p>
+        </div>
+        
+        <div class="mega-share-buttons">
+          <button class="mega-share-btn whatsapp" onclick="shareOnWhatsApp()">
+            <span class="share-icon">💬</span>
+            <span class="share-text">Share on WhatsApp</span>
+            <span class="share-subtitle">Most Popular</span>
+          </button>
+          
+          <button class="mega-share-btn facebook" onclick="shareOnFacebook()">
+            <span class="share-icon">📘</span>
+            <span class="share-text">Share on Facebook</span>
+            <span class="share-subtitle">Reach Friends</span>
+          </button>
+          
+          <button class="mega-share-btn twitter" onclick="shareOnTwitter()">
+            <span class="share-icon">🐦</span>
+            <span class="share-text">Tweet This</span>
+            <span class="share-subtitle">Go Viral</span>
+          </button>
+          
+          <button class="mega-share-btn copy" onclick="copyLink()">
+            <span class="share-icon">🔗</span>
+            <span class="share-text">Copy Link</span>
+            <span class="share-subtitle">Share Anywhere</span>
+          </button>
+        </div>
+        
+        <div class="share-incentive">
+          <p>🎆 <strong>Share now and help us celebrate India together!</strong> 🎆</p>
+          <div class="trending-now">
+            <span class="trending-badge">🔥 TRENDING</span>
+            <span class="trending-text">#IndependenceDay2025 #ProudIndian #JaiHind</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>🇮🇳 Bharat Mata Ki Jai</h3>
+          <p>Celebrating the spirit of independence, unity, and progress.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#defense">Defense</a></li>
+            <li><a href="#certificate">Certificate</a></li>
+            <li><a href="#share">Share</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>National Symbols</h4>
+          <p>🦚 National Bird: Peacock</p>
+          <p>🐅 National Animal: Tiger</p>
+          <p>🌺 National Flower: Lotus</p>
+          <p>🌳 National Tree: Banyan</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Independence Day Celebration | Made with ❤️ for India | Jai Hind! 🇮🇳</p>
+      </div>
     </footer>
   </main>
 
+  <!-- Enhanced Floating Elements -->
+  <div class="floating-elements">
+    <div class="floating-flag">🇮🇳</div>
+    <div class="floating-star">⭐</div>
+    <div class="floating-heart">❤️</div>
+  </div>
+
+
+
+  <!-- Music Control -->
+  <div class="music-control">
+    <button id="musicToggle" class="music-btn">
+      <span class="music-icon">🎵</span>
+    </button>
+  </div>
+
   <script src="script.js"></script>
+  <script src="enhanced-script.js"></script>
+  <script src="mouse-effects.js"></script>
+  <script src="additional-animations.js"></script>
+  <script>
+    // Enhanced sharing with tracking
+    function updateShareCount() {
+      const counts = {
+        whatsapp: Math.floor(Math.random() * 1000) + 15000,
+        facebook: Math.floor(Math.random() * 800) + 12000,
+        twitter: Math.floor(Math.random() * 600) + 8000
+      };
+      
+      // Update display numbers periodically
+      setInterval(() => {
+        document.querySelector('.viral-stat .stat-number').textContent = 
+          (47382 + Math.floor(Math.random() * 100)).toLocaleString();
+      }, 5000);
+    }
+    
+    // Tricolor Mouse Trail
+    function createTricolorTrail() {
+      const colors = ['#ff9933', '#ffffff', '#138808'];
+      let lastTime = 0;
+      
+      document.addEventListener('mousemove', (e) => {
+        const now = Date.now();
+        if (now - lastTime < 40) return;
+        lastTime = now;
+        
+        colors.forEach((color, i) => {
+          setTimeout(() => {
+            const dot = document.createElement('div');
+            dot.style.cssText = `
+              position: fixed;
+              width: 6px;
+              height: 6px;
+              background: ${color};
+              border-radius: 50%;
+              pointer-events: none;
+              z-index: 9999;
+              left: ${e.clientX - 3 + (Math.random() - 0.5) * 8}px;
+              top: ${e.clientY - 3 + i * 4 + (Math.random() - 0.5) * 8}px;
+              animation: dotFade 1s ease-out forwards;
+              box-shadow: 0 0 8px ${color};
+            `;
+            document.body.appendChild(dot);
+            
+            setTimeout(() => {
+              if (dot.parentNode) dot.remove();
+            }, 1000);
+          }, i * 30);
+        });
+      });
+    }
+    
+    // Add dot animation
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes dotFade {
+        0% {
+          opacity: 0.8;
+          transform: scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(0.3) translateY(-20px);
+        }
+      }
+    `;
+    document.head.appendChild(style);
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      updateShareCount();
+      createTricolorTrail();
+    });
+  </script>
+
+  <script>
+    // Auto-play music on any user interaction
+    let audioEnabled = false;
+    function enableAudio() {
+      if (!audioEnabled) {
+        document.getElementById('jetSound').play().catch(() => {});
+        setTimeout(() => {
+          document.getElementById('nationalAnthem').play().catch(() => {});
+        }, 2000);
+        audioEnabled = true;
+      }
+    }
+    
+    document.addEventListener('click', enableAudio, { once: true });
+    document.addEventListener('touchstart', enableAudio, { once: true });
+    document.addEventListener('keydown', enableAudio, { once: true });
+  </script>
 </body>
 </html>

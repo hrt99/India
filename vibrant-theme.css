@@ -1,0 +1,311 @@
+/* Vibrant India-Themed Enhancements */
+
+/* Enhanced Background Patterns */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255, 153, 51, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(19, 136, 8, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(0, 0, 128, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Vibrant Section Backgrounds */
+.hero-section {
+  background: linear-gradient(135deg, 
+    rgba(255, 153, 51, 0.1) 0%, 
+    rgba(255, 255, 255, 0.05) 50%, 
+    rgba(19, 136, 8, 0.1) 100%);
+}
+
+.quote-section {
+  background: linear-gradient(135deg, #ff9933 0%, #ffd700 50%, #ff9933 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.quote-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="30" opacity="0.1">🕉️</text></svg>') repeat;
+  animation: patternFloat 30s linear infinite;
+}
+
+.countdown-section {
+  background: linear-gradient(135deg, #000080 0%, #1e3a8a 50%, #3730a3 100%);
+  position: relative;
+}
+
+.countdown-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>') repeat;
+  animation: sparkleMove 20s linear infinite;
+}
+
+.pride-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f1f5f9 100%);
+  position: relative;
+}
+
+.defense-gallery {
+  background: linear-gradient(135deg, #138808 0%, #16a34a 50%, #15803d 100%);
+  position: relative;
+}
+
+.defense-gallery::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="50,10 60,40 90,40 70,60 80,90 50,70 20,90 30,60 10,40 40,40" fill="white" opacity="0.05"/></svg>') repeat;
+  animation: patternFloat 25s linear infinite reverse;
+}
+
+.values-section {
+  background: linear-gradient(135deg, #fef3c7 0%, #fbbf24 20%, #f59e0b 50%, #d97706 80%, #92400e 100%);
+  position: relative;
+}
+
+.values-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="20" opacity="0.1">🪷</text></svg>') repeat;
+  animation: patternFloat 35s linear infinite;
+}
+
+/* Enhanced Card Designs */
+.achievement-item {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.achievement-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff9933, #ffd700, #138808);
+}
+
+.achievement-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(255, 153, 51, 0.2);
+}
+
+.value-item {
+  background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.95) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.value-item::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+  transform: rotate(45deg);
+  transition: transform 0.6s;
+}
+
+.value-item:hover::after {
+  transform: rotate(45deg) translate(50%, 50%);
+}
+
+/* Enhanced Hero Cards */
+.hero-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+  border: 1px solid rgba(255, 153, 51, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #ff9933, #138808);
+}
+
+/* Vibrant Buttons */
+.generate-btn {
+  background: linear-gradient(135deg, #ff9933 0%, #fbbf24 50%, #f59e0b 100%);
+  box-shadow: 0 8px 25px rgba(255, 153, 51, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.generate-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.6s;
+}
+
+.generate-btn:hover::before {
+  left: 100%;
+}
+
+/* Enhanced Flag Animation */
+.indian-flag {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  border: 2px solid rgba(255,255,255,0.5);
+}
+
+.flag-wave {
+  background: linear-gradient(90deg, 
+    rgba(255,255,255,0.3) 0%, 
+    rgba(255,255,255,0.6) 50%, 
+    rgba(255,255,255,0.3) 100%);
+}
+
+/* Glowing Text Effects */
+.section-title {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #ff9933, #ffd700, #138808);
+  border-radius: 2px;
+}
+
+/* Enhanced Countdown */
+.countdown-item {
+  background: linear-gradient(135deg, 
+    rgba(255,255,255,0.15) 0%, 
+    rgba(255,255,255,0.1) 100%);
+  border: 1px solid rgba(255,255,255,0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.countdown-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ffd700, #ff9933);
+}
+
+.countdown-number {
+  background: linear-gradient(135deg, #ffd700, #ffed4a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+
+/* Floating Animations */
+@keyframes patternFloat {
+  0% { transform: translateX(0) translateY(0); }
+  25% { transform: translateX(-20px) translateY(-10px); }
+  50% { transform: translateX(-40px) translateY(0); }
+  75% { transform: translateX(-20px) translateY(10px); }
+  100% { transform: translateX(0) translateY(0); }
+}
+
+@keyframes sparkleMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100px); }
+}
+
+/* Enhanced Gallery */
+.gallery-item {
+  border: 3px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(45deg, #ff9933, #138808) border-box;
+}
+
+.gallery-overlay {
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+  .achievement-item,
+  .value-item,
+  .hero-card {
+    margin-bottom: 10px;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* Additional Color Variations */
+.value-item:nth-child(12) { 
+  border-top-color: var(--gold); 
+}
+
+/* Eye-friendly Color Adjustments */
+body {
+  color: #2d3748;
+}
+
+.section-title {
+  color: #1a202c;
+}
+
+p, .pride-description {
+  color: #4a5568;
+  line-height: 1.7;
+}
+
+/* Smooth Transitions */
+* {
+  transition: all 0.3s ease;
+}
+
+.achievement-item,
+.value-item,
+.hero-card,
+.gallery-item {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}

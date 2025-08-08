@@ -1,0 +1,50 @@
+/* Flag Wave Animation Fix */
+.wave {
+  background-image: linear-gradient(
+    128deg, rgba(89,72,21,0) 39%, 
+    rgba(250,245,245,0.15) 
+    46%, rgba(89,72,21,0) 53%) !important;
+  animation-duration: 25s !important;
+}
+
+/* Text Readability Fixes */
+.countdown-section .section-title,
+.defense-gallery .section-title,
+.stats-section .section-title {
+  color: #ffffff !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7) !important;
+}
+
+.values-section .section-title {
+  color: #1a202c !important;
+  text-shadow: 2px 2px 4px rgba(255,255,255,0.8) !important;
+}
+
+.countdown-section p,
+.defense-gallery p,
+.stats-section p {
+  color: #ffffff !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5) !important;
+}
+
+.gallery-overlay h3,
+.gallery-overlay p {
+  color: #ffffff !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+}
+
+.countdown-label {
+  color: #ffffff !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5) !important;
+}
+
+.stat-label {
+  color: #ffffff !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5) !important;
+}
+
+/* Remove religious symbols from backgrounds */
+.quote-section::before,
+.values-section::before {
+  display: none !important;
+}
