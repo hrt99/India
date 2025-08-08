@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     showCertificatePopup();
   }, 10000);
   
-  // Audio control - play once after 5 seconds
+  // Audio control - play after 10 seconds, max 2 times
   setTimeout(() => {
-    playAudioOnce();
-  }, 5000);
+    playAudioControlled();
+  }, 10000);
 });
 
 function showCertificatePopup() {
@@ -75,9 +75,10 @@ function goToCertificate() {
   document.getElementById('certificate').scrollIntoView({ behavior: 'smooth' });
 }
 
-function playAudioOnce() {
-  // Check if audio was already played
-  if (localStorage.getItem('audioPlayed')) return;
+function playAudioControlled() {
+  // Check play count (max 2 times)
+  let playCount = parseInt(localStorage.getItem('audioPlayCount') || '0');
+  if (playCount >= 2) return;
   
   const jetSound = document.getElementById('jetSound');
   const nationalAnthem = document.getElementById('nationalAnthem');
@@ -88,25 +89,27 @@ function playAudioOnce() {
   if (nationalAnthem) nationalAnthem.volume = 0.12;
   if (bgMusic) bgMusic.volume = 0.06;
   
-  // Play sequence
-  if (jetSound) {
-    jetSound.play().catch(() => {});
-    
-    setTimeout(() => {
-      if (nationalAnthem) {
-        nationalAnthem.play().catch(() => {});
-        
-        setTimeout(() => {
-          if (bgMusic) {
-            bgMusic.play().catch(() => {});
-          }
-        }, 3000);
-      }
-    }, 2000);
+  // Play sequence only if not muted
+  if (!window.musicMuted) {
+    if (jetSound) {
+      jetSound.play().catch(() => {});
+      
+      setTimeout(() => {
+        if (nationalAnthem && !window.musicMuted) {
+          nationalAnthem.play().catch(() => {});
+          
+          setTimeout(() => {
+            if (bgMusic && !window.musicMuted) {
+              bgMusic.play().catch(() => {});
+            }
+          }, 3000);
+        }
+      }, 2000);
+    }
   }
   
-  // Mark as played
-  localStorage.setItem('audioPlayed', 'true');
+  // Increment play count
+  localStorage.setItem('audioPlayCount', (playCount + 1).toString());
 }
 
 // Make function global
