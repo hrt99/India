@@ -34,15 +34,7 @@ function initJetIntro() {
   bgMusic.volume = 0.1;
   bgMusic.loop = false;
 
-  // Auto-play jet sound
-  setTimeout(() => {
-    jetSound.play().catch(() => console.log("Jet sound autoplay blocked"));
-  }, 500);
-  
-  // Auto-play national anthem
-  setTimeout(() => {
-    nationalAnthem.play().catch(() => console.log("Anthem autoplay blocked"));
-  }, 2500);
+  // Removed auto-play sounds
 
   // Transition to main content
   setTimeout(() => {
@@ -53,8 +45,7 @@ function initJetIntro() {
       jetIntro.style.display = "none";
       mainContent.classList.add("show");
       
-      // Start background music once
-      bgMusic.play().catch(() => console.log("Background music autoplay blocked"));
+      // Background music disabled
       
       // Trigger confetti celebration
       triggerCelebrationConfetti();
@@ -195,7 +186,10 @@ function setupCertificateDownload(fullName, city) {
     // Generate certificate directly
     generateCertificateImage(fullName, city);
     
-    // Trigger download confetti only (no sound)
+    // Play light certificate sound once
+    playLightCertificateSound();
+    
+    // Trigger download confetti
     triggerDownloadConfetti();
   };
 }
@@ -520,6 +514,28 @@ function triggerIndependenceDayConfetti() {
       requestAnimationFrame(frame);
     }
   }());
+}
+
+// Light Certificate Sound Function
+function playLightCertificateSound() {
+  const audio = new Audio();
+  audio.volume = 0.3;
+  const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  const oscillator = audioContext.createOscillator();
+  const gainNode = audioContext.createGain();
+  
+  oscillator.connect(gainNode);
+  gainNode.connect(audioContext.destination);
+  
+  oscillator.frequency.setValueAtTime(523.25, audioContext.currentTime); // C5
+  oscillator.frequency.setValueAtTime(659.25, audioContext.currentTime + 0.1); // E5
+  oscillator.frequency.setValueAtTime(783.99, audioContext.currentTime + 0.2); // G5
+  
+  gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+  gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+  
+  oscillator.start(audioContext.currentTime);
+  oscillator.stop(audioContext.currentTime + 0.5);
 }
 
 // Utility Functions
