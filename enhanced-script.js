@@ -59,6 +59,11 @@ function autoAdvanceDefense() {
   showDefenseSlide(currentDefenseSlideNum);
 }
 
+function changeDefenseSlide(direction) {
+  currentDefenseSlideNum += direction;
+  showDefenseSlide(currentDefenseSlideNum);
+}
+
 // Initialize carousels
 document.addEventListener('DOMContentLoaded', () => {
   setInterval(autoAdvanceQuotes, 4000);
@@ -67,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Make functions global
 window.currentDefenseSlide = currentDefenseSlide;
+window.changeDefenseSlide = changeDefenseSlide;
 
 // Add enhanced CSS for quote carousel and jets
 const enhancedStyles = `

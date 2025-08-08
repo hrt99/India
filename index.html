@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="fixes.css" />
   <link rel="stylesheet" href="mobile-fixes.css" />
   <link rel="stylesheet" href="defense-carousel.css" />
+  <link rel="stylesheet" href="flag-fixes.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -309,6 +310,10 @@
             <p>Air Defense Excellence</p>
           </div>
         </div>
+      </div>
+      <div class="defense-navigation">
+        <button class="nav-arrow prev" onclick="changeDefenseSlide(-1)">❮</button>
+        <button class="nav-arrow next" onclick="changeDefenseSlide(1)">❯</button>
       </div>
       <div class="defense-dots">
         <span class="dot active" onclick="currentDefenseSlide(1)"></span>
@@ -694,6 +699,7 @@
   <script src="enhanced-script.js"></script>
   <script src="mouse-effects.js"></script>
   <script src="additional-animations.js"></script>
+  <script src="audio-fixes.js"></script>
   <script>
     // Enhanced sharing with tracking
     function updateShareCount() {
@@ -768,22 +774,6 @@
     });
   </script>
 
-  <script>
-    // Auto-play music on any user interaction
-    let audioEnabled = false;
-    function enableAudio() {
-      if (!audioEnabled) {
-        document.getElementById('jetSound').play().catch(() => {});
-        setTimeout(() => {
-          document.getElementById('nationalAnthem').play().catch(() => {});
-        }, 2000);
-        audioEnabled = true;
-      }
-    }
-    
-    document.addEventListener('click', enableAudio, { once: true });
-    document.addEventListener('touchstart', enableAudio, { once: true });
-    document.addEventListener('keydown', enableAudio, { once: true });
-  </script>
+
 </body>
 </html>

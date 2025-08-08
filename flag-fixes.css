@@ -1,0 +1,52 @@
+/* Fix Ashoka Chakra spokes staying within circle */
+.ashoka-chakra {
+  width: 60px;
+  height: 60px;
+  border: 3px solid var(--blue);
+  border-radius: 50%;
+  position: relative;
+  animation: chakraRotate 8s linear infinite;
+  box-shadow: 0 0 15px rgba(0, 0, 128, 0.4);
+  background: rgba(0, 0, 128, 0.1);
+  overflow: hidden !important;
+}
+
+.spoke {
+  position: absolute;
+  width: 1px;
+  height: 25px;
+  background: var(--blue);
+  left: 50%;
+  top: 50%;
+  transform-origin: bottom center;
+  transform: translateX(-50%) translateY(-100%) rotate(calc(var(--i) * 15deg));
+}
+
+/* Reduce flag wave animation */
+.wave {
+  background-image: linear-gradient(
+    128deg, rgba(89,72,21,0) 45%, 
+    rgba(250,245,245,0.08) 
+    50%, rgba(89,72,21,0) 55%) !important;
+  animation-duration: 30s !important;
+}
+
+/* Fix flag wave in main flag */
+.flag-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    rgba(255,255,255,0.05), 
+    rgba(255,255,255,0.1), 
+    rgba(255,255,255,0.05));
+  animation: waveEffect 4s linear infinite;
+  z-index: 10;
+}
+
+@keyframes waveEffect {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}

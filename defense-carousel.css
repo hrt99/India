@@ -20,9 +20,10 @@
 
 .defense-slide img {
   width: 100%;
-  height: 400px;
-  object-fit: cover;
+  height: 450px;
+  object-fit: contain;
   display: block;
+  background: #000;
 }
 
 .defense-overlay {
@@ -69,9 +70,43 @@
   transform: scale(1.2);
 }
 
+.defense-navigation {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.nav-arrow {
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  pointer-events: all;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-arrow:hover {
+  background: rgba(0,0,0,0.8);
+  transform: scale(1.1);
+}
+
 @media (max-width: 768px) {
   .defense-slide img {
-    height: 300px;
+    height: 350px;
   }
   
   .defense-overlay {
@@ -84,5 +119,11 @@
   
   .defense-overlay p {
     font-size: 0.9rem;
+  }
+  
+  .nav-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
   }
 }
