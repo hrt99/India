@@ -1,0 +1,70 @@
+/* Mobile Gallery Fix */
+@media (max-width: 768px) {
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px !important;
+  }
+  
+  .gallery-item {
+    height: 200px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+  
+  .gallery-item {
+    height: 180px !important;
+  }
+}
+
+/* Certificate Actions */
+.certificate-actions {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.download-btn,
+.share-cert-btn {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.share-cert-btn {
+  background: linear-gradient(135deg, #ff9933 0%, #e67e00 100%);
+}
+
+.download-btn:hover,
+.share-cert-btn:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .certificate-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .download-btn,
+  .share-cert-btn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+}

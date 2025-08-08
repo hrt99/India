@@ -255,6 +255,9 @@ function generateCertificateImage(fullName, city) {
   ctx.fillStyle = '#666';
   ctx.fillText('Independence Day Celebration Committee', canvas.width / 2, 560);
   
+  // Store certificate for sharing
+  window.certificateCanvas = canvas;
+  
   // Download the certificate
   canvas.toBlob((blob) => {
     const url = URL.createObjectURL(blob);
@@ -266,6 +269,29 @@ function generateCertificateImage(fullName, city) {
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
   }, 'image/png');
+  
+  // Add share functionality
+  const shareBtn = document.getElementById('shareCertificate');
+  if (shareBtn) {
+    shareBtn.onclick = () => {
+      const shareText = `I just received my Certificate of Patriotism! Proud to be Indian! 🇮🇳 #ProudIndian #JaiHind ${window.location.href}`;
+      const shareModal = document.createElement('div');
+      shareModal.innerHTML = `
+        <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000; display: flex; align-items: center; justify-content: center; padding: 20px;">
+          <div style="background: white; padding: 30px; border-radius: 15px; max-width: 400px; width: 100%; text-align: center;">
+            <h3 style="margin: 0 0 20px 0; color: #1a202c;">📤 Share Your Certificate</h3>
+            <div style="display: flex; gap: 10px; justify-content: center; margin: 20px 0; flex-wrap: wrap;">
+              <button onclick="window.open('https://wa.me/?text=${encodeURIComponent(shareText)}', '_blank')" style="background: #25d366; color: white; border: none; padding: 12px 16px; border-radius: 8px; cursor: pointer; font-size: 14px;">💬 WhatsApp</button>
+              <button onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}', '_blank')" style="background: #1877f2; color: white; border: none; padding: 12px 16px; border-radius: 8px; cursor: pointer; font-size: 14px;">📘 Facebook</button>
+              <button onclick="window.open('https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}', '_blank')" style="background: #1da1f2; color: white; border: none; padding: 12px 16px; border-radius: 8px; cursor: pointer; font-size: 14px;">🐦 Twitter</button>
+            </div>
+            <button onclick="this.parentElement.parentElement.remove()" style="background: #666; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">Close</button>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(shareModal);
+    };
+  }
 }
 
 // Music Control
