@@ -167,20 +167,105 @@ function setupCertificateDownload(fullName, city) {
       window.analytics.trackDownload(fullName);
     }
     
-    // Create certificate URL with parameters
-    const certificateUrl = `certificate.html?name=${encodeURIComponent(fullName)}&city=${encodeURIComponent(city)}`;
-    
-    // Open certificate in new window for printing/saving
-    const certificateWindow = window.open(certificateUrl, '_blank', 'width=800,height=600');
-    
-    // Focus the new window
-    if (certificateWindow) {
-      certificateWindow.focus();
-    }
+    // Generate certificate directly
+    generateCertificateImage(fullName, city);
     
     // Trigger download confetti
     triggerDownloadConfetti();
   };
+}
+
+// Generate Certificate as Image
+function generateCertificateImage(fullName, city) {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  
+  // Set canvas size for mobile-friendly certificate
+  canvas.width = 800;
+  canvas.height = 600;
+  
+  // Background gradient
+  const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+  gradient.addColorStop(0, '#fff8e1');
+  gradient.addColorStop(0.5, '#ffffff');
+  gradient.addColorStop(1, '#f3e5f5');
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  
+  // Border
+  ctx.strokeStyle = '#ff9933';
+  ctx.lineWidth = 8;
+  ctx.strokeRect(20, 20, canvas.width - 40, canvas.height - 40);
+  
+  // Inner border
+  ctx.strokeStyle = '#138808';
+  ctx.lineWidth = 4;
+  ctx.strokeRect(35, 35, canvas.width - 70, canvas.height - 70);
+  
+  // Title
+  ctx.fillStyle = '#1a202c';
+  ctx.font = 'bold 36px Arial';
+  ctx.textAlign = 'center';
+  ctx.fillText('🇮🇳 CERTIFICATE OF PATRIOTISM 🇮🇳', canvas.width / 2, 120);
+  
+  // Subtitle
+  ctx.font = '20px Arial';
+  ctx.fillStyle = '#4a5568';
+  ctx.fillText('Republic of India', canvas.width / 2, 160);
+  
+  // Main text
+  ctx.font = '24px Arial';
+  ctx.fillStyle = '#2d3748';
+  ctx.fillText('This is to certify that', canvas.width / 2, 220);
+  
+  // Name
+  ctx.font = 'bold 32px Arial';
+  ctx.fillStyle = '#ff9933';
+  ctx.fillText(fullName.toUpperCase(), canvas.width / 2, 280);
+  
+  // From city
+  ctx.font = '20px Arial';
+  ctx.fillStyle = '#4a5568';
+  ctx.fillText(`from ${city}`, canvas.width / 2, 320);
+  
+  // Certificate text
+  ctx.font = '22px Arial';
+  ctx.fillStyle = '#2d3748';
+  ctx.fillText('is a proud citizen of India and has demonstrated', canvas.width / 2, 370);
+  ctx.fillText('exceptional patriotic spirit and love for our nation', canvas.width / 2, 400);
+  
+  // Date
+  const today = new Date();
+  const dateStr = today.toLocaleDateString('en-IN', { 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  });
+  ctx.font = '18px Arial';
+  ctx.fillStyle = '#666';
+  ctx.fillText(`Issued on: ${dateStr}`, canvas.width / 2, 460);
+  
+  // Motto
+  ctx.font = 'italic 20px Arial';
+  ctx.fillStyle = '#138808';
+  ctx.fillText('"Satyameva Jayate" - Truth Alone Triumphs', canvas.width / 2, 520);
+  
+  // Signature line
+  ctx.font = '16px Arial';
+  ctx.fillStyle = '#666';
+  ctx.fillText('Independence Day Celebration Committee', canvas.width / 2, 560);
+  
+  // Download the certificate
+  canvas.toBlob((blob) => {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `Certificate_${fullName.replace(/\s+/g, '_')}_${city}.png`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }, 'image/png');
 }
 
 // Music Control
