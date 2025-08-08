@@ -29,10 +29,44 @@ function autoAdvanceQuotes() {
   showSlide(currentQuoteSlide);
 }
 
-// Initialize quote carousel
+// Defense Carousel
+let currentDefenseSlideNum = 1;
+
+function currentDefenseSlide(n) {
+  showDefenseSlide(currentDefenseSlideNum = n);
+}
+
+function showDefenseSlide(n) {
+  const slides = document.querySelectorAll('.defense-slide');
+  const dots = document.querySelectorAll('.defense-dots .dot');
+  
+  if (n > slides.length) currentDefenseSlideNum = 1;
+  if (n < 1) currentDefenseSlideNum = slides.length;
+  
+  slides.forEach(slide => slide.classList.remove('active'));
+  dots.forEach(dot => dot.classList.remove('active'));
+  
+  if (slides[currentDefenseSlideNum - 1]) {
+    slides[currentDefenseSlideNum - 1].classList.add('active');
+  }
+  if (dots[currentDefenseSlideNum - 1]) {
+    dots[currentDefenseSlideNum - 1].classList.add('active');
+  }
+}
+
+function autoAdvanceDefense() {
+  currentDefenseSlideNum++;
+  showDefenseSlide(currentDefenseSlideNum);
+}
+
+// Initialize carousels
 document.addEventListener('DOMContentLoaded', () => {
   setInterval(autoAdvanceQuotes, 4000);
+  setInterval(autoAdvanceDefense, 5000);
 });
+
+// Make functions global
+window.currentDefenseSlide = currentDefenseSlide;
 
 // Add enhanced CSS for quote carousel and jets
 const enhancedStyles = `

@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="vibrant-theme.css" />
   <link rel="stylesheet" href="fixes.css" />
   <link rel="stylesheet" href="mobile-fixes.css" />
+  <link rel="stylesheet" href="defense-carousel.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -265,49 +266,57 @@
     <!-- Enhanced Defense Gallery -->
     <section class="defense-gallery" id="defense">
       <h2 class="section-title">Indian Armed Forces - Our Pride</h2>
-      <div class="gallery-container">
-        <div class="gallery-item" data-category="army">
+      <div class="defense-carousel">
+        <div class="defense-slide active">
           <img src="assets/soldier.jpg" alt="Indian Army Soldier" loading="lazy">
-          <div class="gallery-overlay">
+          <div class="defense-overlay">
             <h3>Indian Army</h3>
             <p>Guardians of Our Borders</p>
           </div>
         </div>
-        <div class="gallery-item" data-category="army">
+        <div class="defense-slide">
           <img src="assets/tank.jpg" alt="Indian Tank" loading="lazy">
-          <div class="gallery-overlay">
+          <div class="defense-overlay">
             <h3>Armored Division</h3>
             <p>Strength on Ground</p>
           </div>
         </div>
-        <div class="gallery-item" data-category="airforce">
+        <div class="defense-slide">
           <img src="assets/jet.jpg" alt="Indian Air Force Jet" loading="lazy">
-          <div class="gallery-overlay">
+          <div class="defense-overlay">
             <h3>Indian Air Force</h3>
             <p>Masters of the Sky</p>
           </div>
         </div>
-        <div class="gallery-item" data-category="navy">
+        <div class="defense-slide">
           <img src="assets/ship.jpg" alt="Indian Navy Ship" loading="lazy">
-          <div class="gallery-overlay">
+          <div class="defense-overlay">
             <h3>Indian Navy</h3>
             <p>Protectors of Our Seas</p>
           </div>
         </div>
-        <div class="gallery-item" data-category="defense">
+        <div class="defense-slide">
           <img src="assets/missile.jpg" alt="Indian Missile" loading="lazy">
-          <div class="gallery-overlay">
+          <div class="defense-overlay">
             <h3>Missile Defense</h3>
             <p>Advanced Defense Systems</p>
           </div>
         </div>
-        <div class="gallery-item" data-category="defense">
+        <div class="defense-slide">
           <img src="assets/s400.jpg" alt="S-400 Defense System" loading="lazy">
-          <div class="gallery-overlay">
+          <div class="defense-overlay">
             <h3>S-400 System</h3>
             <p>Air Defense Excellence</p>
           </div>
         </div>
+      </div>
+      <div class="defense-dots">
+        <span class="dot active" onclick="currentDefenseSlide(1)"></span>
+        <span class="dot" onclick="currentDefenseSlide(2)"></span>
+        <span class="dot" onclick="currentDefenseSlide(3)"></span>
+        <span class="dot" onclick="currentDefenseSlide(4)"></span>
+        <span class="dot" onclick="currentDefenseSlide(5)"></span>
+        <span class="dot" onclick="currentDefenseSlide(6)"></span>
       </div>
     </section>
 
