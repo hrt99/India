@@ -1,0 +1,58 @@
+/* Background and Text Fixes */
+
+/* Fix certificate section - white background */
+.certificate-section {
+  background: white !important;
+  color: #333 !important;
+}
+
+.certificate-section * {
+  color: #333 !important;
+}
+
+.certificate-description {
+  color: #333 !important;
+  font-weight: 500 !important;
+}
+
+/* Fix share section - white background */
+.share-section {
+  background: white !important;
+  color: #333 !important;
+  border-top: 5px solid var(--blue) !important;
+  border-bottom: 5px solid var(--green) !important;
+}
+
+.share-section * {
+  color: #333 !important;
+}
+
+.share-section .section-title {
+  color: #333 !important;
+  text-shadow: none !important;
+}
+
+.share-text {
+  color: #333 !important;
+}
+
+.trending-hashtags h3 {
+  color: var(--orange) !important;
+}
+
+.hashtag {
+  background: rgba(255, 153, 51, 0.1) !important;
+  color: #333 !important;
+  border: 1px solid var(--orange) !important;
+}
+
+.share-btn {
+  background: white !important;
+  color: #333 !important;
+  border: 2px solid var(--orange) !important;
+}
+
+.share-btn:hover {
+  background: var(--orange) !important;
+  color: white !important;
+}

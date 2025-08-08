@@ -1,0 +1,278 @@
+/* UI Improvements - Better Readability and Space Utilization */
+
+/* Fix hero section background - lighter with visible tricolor */
+.hero-section {
+  background: linear-gradient(135deg, 
+    rgba(255, 153, 51, 0.1) 0%, 
+    rgba(255, 255, 255, 0.9) 33%, 
+    rgba(255, 255, 255, 0.9) 66%, 
+    rgba(19, 136, 8, 0.1) 100%) !important;
+}
+
+/* Fix certificate section text readability */
+.certificate-section {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.9) 0%, rgba(255, 237, 78, 0.9) 100%) !important;
+  color: #333 !important;
+}
+
+.certificate-description {
+  color: #333 !important;
+  font-weight: 500 !important;
+}
+
+/* Fix share section text */
+.share-section {
+  background: linear-gradient(135deg, rgba(0, 0, 128, 0.9) 0%, rgba(0, 51, 102, 0.9) 100%) !important;
+}
+
+.share-text {
+  color: white !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5) !important;
+}
+
+/* Collapsible content sections */
+.collapsible-section {
+  margin: 20px 0;
+}
+
+.collapsible-header {
+  background: linear-gradient(135deg, var(--orange), var(--gold));
+  color: white;
+  padding: 15px 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 153, 51, 0.3);
+}
+
+.collapsible-header:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 153, 51, 0.4);
+}
+
+.collapsible-header .toggle-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.collapsible-header.active .toggle-icon {
+  transform: rotate(180deg);
+}
+
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: white;
+  border-radius: 0 0 10px 10px;
+}
+
+.collapsible-content.active {
+  max-height: 1000px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-top: none;
+}
+
+/* Compact grid for heritage items */
+.heritage-compact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.heritage-item-compact {
+  background: rgba(255,255,255,0.1);
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  border-left: 3px solid var(--orange);
+  transition: transform 0.2s ease;
+}
+
+.heritage-item-compact:hover {
+  transform: translateX(5px);
+  background: rgba(255,255,255,0.2);
+}
+
+/* Tabbed interface for states */
+.tabs-container {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.tabs-nav {
+  display: flex;
+  background: #f8f9fa;
+  overflow-x: auto;
+}
+
+.tab-btn {
+  padding: 15px 20px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+}
+
+.tab-btn.active {
+  background: white;
+  border-bottom-color: var(--orange);
+  color: var(--orange);
+  font-weight: 600;
+}
+
+.tab-content {
+  display: none;
+  padding: 20px;
+}
+
+.tab-content.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Enhanced defense gallery */
+.defense-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.defense-card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.defense-card:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+.defense-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.defense-card:hover img {
+  transform: scale(1.1);
+}
+
+.defense-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.9));
+  color: white;
+  padding: 20px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.defense-card:hover .defense-overlay {
+  transform: translateY(0);
+}
+
+/* Floating action buttons */
+.floating-actions {
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.floating-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.floating-btn:hover {
+  transform: scale(1.1);
+}
+
+.btn-share { background: #25d366; }
+.btn-like { background: #e74c3c; }
+.btn-info { background: #3498db; }
+
+/* Progress indicator */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(to right, var(--orange), var(--green));
+  z-index: 9999;
+  transition: width 0.3s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .heritage-compact {
+    grid-template-columns: 1fr;
+  }
+  
+  .tabs-nav {
+    flex-wrap: wrap;
+  }
+  
+  .tab-btn {
+    flex: 1;
+    min-width: 120px;
+  }
+  
+  .defense-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .floating-actions {
+    right: 10px;
+    bottom: 80px;
+  }
+  
+  .floating-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+}

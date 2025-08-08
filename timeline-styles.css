@@ -1,0 +1,245 @@
+/* Timeline and Heritage Section Styles */
+
+.timeline-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.timeline-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, var(--orange), var(--green));
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+  flex-direction: row;
+}
+
+.timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.timeline-year {
+  background: linear-gradient(135deg, var(--orange), var(--gold));
+  color: white;
+  padding: 15px 25px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  min-width: 100px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(255, 153, 51, 0.3);
+  z-index: 2;
+  position: relative;
+}
+
+.timeline-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  margin: 0 30px;
+  flex: 1;
+  border-left: 4px solid var(--orange);
+}
+
+.timeline-content h3 {
+  color: var(--dark-blue);
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.timeline-content p {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Heritage Section */
+.heritage-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, var(--green) 0%, #0d5f0d 100%);
+  color: white;
+}
+
+.heritage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.heritage-category {
+  background: rgba(255,255,255,0.1);
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.heritage-category h3 {
+  color: var(--gold);
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.heritage-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.heritage-item {
+  background: rgba(255,255,255,0.1);
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  border-left: 3px solid var(--orange);
+}
+
+/* States Section */
+.states-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, var(--blue) 0%, var(--dark-blue) 100%);
+  color: white;
+}
+
+.states-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.state-card {
+  background: rgba(255,255,255,0.1);
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: transform 0.3s ease;
+}
+
+.state-card:hover {
+  transform: translateY(-5px);
+}
+
+.state-card h3 {
+  color: var(--gold);
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.state-card p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.state-card strong {
+  color: var(--orange);
+}
+
+/* Modern Achievements */
+.achievements-modern {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+}
+
+.achievements-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.achievement-category {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-top: 4px solid var(--orange);
+}
+
+.achievement-category h3 {
+  color: var(--dark-blue);
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.achievement-category ul {
+  list-style: none;
+  padding: 0;
+}
+
+.achievement-category li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  color: #666;
+  line-height: 1.5;
+}
+
+.achievement-category li:last-child {
+  border-bottom: none;
+}
+
+.achievement-category li::before {
+  content: '✓';
+  color: var(--green);
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .timeline-container::before {
+    left: 30px;
+  }
+  
+  .timeline-item {
+    flex-direction: column !important;
+    align-items: flex-start;
+    padding-left: 60px;
+  }
+  
+  .timeline-year {
+    position: absolute;
+    left: -50px;
+    min-width: 80px;
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+  
+  .timeline-content {
+    margin: 20px 0 0 0;
+    width: 100%;
+  }
+  
+  .heritage-grid,
+  .states-grid,
+  .achievements-categories {
+    grid-template-columns: 1fr;
+  }
+}

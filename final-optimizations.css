@@ -1,0 +1,131 @@
+/* Final Optimizations for Better UX */
+
+/* Simplify mega share buttons */
+.mega-share-btn {
+  background: white !important;
+  color: #333 !important;
+  border: 2px solid var(--orange) !important;
+  padding: 15px 25px !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  transition: all 0.3s ease !important;
+  margin: 10px !important;
+  min-width: 200px !important;
+  justify-content: center !important;
+}
+
+.mega-share-btn:hover {
+  background: var(--orange) !important;
+  color: white !important;
+  transform: translateY(-2px) !important;
+}
+
+.share-subtitle {
+  display: none !important;
+}
+
+/* Better viral section layout */
+.viral-container {
+  max-width: 600px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+.mega-share-buttons {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+  gap: 15px !important;
+  margin: 30px 0 !important;
+}
+
+/* Remove viral stats that were causing visibility issues */
+.viral-stats {
+  display: none !important;
+}
+
+/* Better certificate form styling */
+.certificate-form {
+  background: rgba(255,255,255,0.95) !important;
+  border: 2px solid var(--orange) !important;
+}
+
+.generate-btn {
+  background: linear-gradient(135deg, var(--orange), var(--gold)) !important;
+  font-size: 1.1rem !important;
+  padding: 18px 30px !important;
+}
+
+/* Compact trending section */
+.trending-now {
+  margin-top: 20px !important;
+  padding: 15px !important;
+  background: rgba(255, 153, 51, 0.1) !important;
+  border-radius: 10px !important;
+  border: 1px solid var(--orange) !important;
+}
+
+.trending-badge {
+  background: var(--orange) !important;
+  color: white !important;
+  padding: 5px 10px !important;
+  border-radius: 15px !important;
+  font-size: 0.8rem !important;
+  font-weight: bold !important;
+}
+
+.trending-text {
+  color: #333 !important;
+  font-weight: 500 !important;
+  margin-left: 10px !important;
+}
+
+/* Better mobile responsiveness */
+@media (max-width: 768px) {
+  .mega-share-buttons {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .mega-share-btn {
+    min-width: 100% !important;
+    margin: 5px 0 !important;
+  }
+  
+  .certificate-form {
+    padding: 20px !important;
+  }
+  
+  .generate-btn {
+    font-size: 1rem !important;
+    padding: 15px 25px !important;
+  }
+}
+
+/* Hide any remaining problematic elements */
+.viral-stat,
+.share-count,
+.cert-stat {
+  display: none !important;
+}
+
+/* Ensure all text is readable */
+.viral-section * {
+  color: #333 !important;
+}
+
+.viral-section .section-title {
+  color: #333 !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1) !important;
+}
+
+/* Better spacing for sections */
+.viral-section,
+.certificate-section {
+  padding: 60px 20px !important;
+}
+
+/* Clean up any duplicate content */
+.duplicate-content {
+  display: none !important;
+}

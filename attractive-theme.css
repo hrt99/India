@@ -1,0 +1,225 @@
+/* Attractive Indian Theme - Light Colors Only */
+
+/* Remove all dark backgrounds */
+body.dark-theme {
+  display: none !important;
+}
+
+.theme-toggle {
+  display: none !important;
+}
+
+/* Beautiful Indian theme backgrounds */
+.hero-section {
+  background: linear-gradient(135deg, 
+    rgba(255, 153, 51, 0.1) 0%, 
+    rgba(255, 255, 255, 1) 25%, 
+    rgba(255, 255, 255, 1) 75%, 
+    rgba(19, 136, 8, 0.1) 100%) !important;
+  border-bottom: 5px solid transparent !important;
+  border-image: linear-gradient(90deg, var(--orange), var(--white), var(--green)) 1 !important;
+}
+
+.timeline-section {
+  background: linear-gradient(135deg, rgba(255, 153, 51, 0.05) 0%, rgba(255, 255, 255, 1) 100%) !important;
+  border-left: 5px solid var(--orange) !important;
+}
+
+.heritage-section {
+  background: linear-gradient(135deg, rgba(19, 136, 8, 0.05) 0%, rgba(255, 255, 255, 1) 100%) !important;
+  border-left: 5px solid var(--green) !important;
+}
+
+.states-section {
+  background: linear-gradient(135deg, rgba(255, 153, 51, 0.08) 0%, rgba(255, 255, 255, 0.95) 50%, rgba(19, 136, 8, 0.08) 100%) !important;
+  border-top: 5px solid var(--orange) !important;
+  border-bottom: 5px solid var(--green) !important;
+}
+
+.achievements-modern {
+  background: linear-gradient(135deg, rgba(19, 136, 8, 0.05) 0%, rgba(255, 255, 255, 1) 100%) !important;
+  border-left: 5px solid var(--green) !important;
+}
+
+.certificate-section {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 255, 255, 1) 100%) !important;
+  border: 5px solid var(--gold) !important;
+  border-radius: 15px !important;
+  margin: 20px !important;
+}
+
+.viral-section,
+.share-section {
+  background: linear-gradient(135deg, rgba(255, 153, 51, 0.05) 0%, rgba(255, 255, 255, 1) 100%) !important;
+  border-left: 5px solid var(--orange) !important;
+}
+
+.tribute-section {
+  background: linear-gradient(135deg, rgba(19, 136, 8, 0.05) 0%, rgba(255, 255, 255, 1) 100%) !important;
+  border-left: 5px solid var(--green) !important;
+}
+
+.values-section {
+  background: linear-gradient(135deg, rgba(255, 153, 51, 0.05) 0%, rgba(255, 255, 255, 1) 100%) !important;
+  border-left: 5px solid var(--orange) !important;
+}
+
+/* Enhanced tabs design */
+.tabs-nav {
+  background: linear-gradient(135deg, rgba(255, 153, 51, 0.1) 0%, rgba(255, 255, 255, 1) 100%) !important;
+  padding: 10px !important;
+  border-radius: 15px 15px 0 0 !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 5px !important;
+  max-height: 200px !important;
+  overflow-y: auto !important;
+}
+
+.tab-btn {
+  background: white !important;
+  color: #333 !important;
+  border: 2px solid rgba(255, 153, 51, 0.3) !important;
+  padding: 8px 12px !important;
+  border-radius: 20px !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+  min-width: auto !important;
+  flex: none !important;
+}
+
+.tab-btn:hover {
+  background: rgba(255, 153, 51, 0.1) !important;
+  border-color: var(--orange) !important;
+  transform: translateY(-2px) !important;
+}
+
+.tab-btn.active {
+  background: var(--orange) !important;
+  color: white !important;
+  border-color: var(--orange) !important;
+  font-weight: 600 !important;
+}
+
+.tabs-container {
+  background: white !important;
+  border: 3px solid rgba(255, 153, 51, 0.2) !important;
+  border-radius: 15px !important;
+  box-shadow: 0 10px 30px rgba(255, 153, 51, 0.1) !important;
+}
+
+.tab-content {
+  background: white !important;
+  color: #333 !important;
+  padding: 30px !important;
+  border-radius: 0 0 15px 15px !important;
+}
+
+.tab-content h3 {
+  color: var(--orange) !important;
+  font-size: 1.5rem !important;
+  margin-bottom: 15px !important;
+  border-bottom: 2px solid rgba(255, 153, 51, 0.2) !important;
+  padding-bottom: 10px !important;
+}
+
+/* Beautiful cards */
+.hero-card,
+.achievement-item,
+.value-item,
+.heritage-item-compact,
+.collapsible-content {
+  background: white !important;
+  border: 2px solid rgba(255, 153, 51, 0.2) !important;
+  border-radius: 15px !important;
+  box-shadow: 0 8px 25px rgba(255, 153, 51, 0.1) !important;
+  transition: all 0.3s ease !important;
+}
+
+.hero-card:hover,
+.achievement-item:hover,
+.value-item:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 15px 35px rgba(255, 153, 51, 0.15) !important;
+  border-color: var(--orange) !important;
+}
+
+/* Attractive buttons */
+.share-btn,
+.mega-share-btn,
+.generate-btn {
+  background: linear-gradient(135deg, var(--orange) 0%, var(--gold) 100%) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 25px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 5px 15px rgba(255, 153, 51, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.share-btn:hover,
+.mega-share-btn:hover,
+.generate-btn:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 25px rgba(255, 153, 51, 0.4) !important;
+}
+
+/* Enhanced hashtags */
+.hashtag {
+  background: linear-gradient(135deg, var(--orange) 0%, var(--gold) 100%) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 20px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 3px 10px rgba(255, 153, 51, 0.3) !important;
+}
+
+.trending-hashtags {
+  background: linear-gradient(135deg, rgba(255, 153, 51, 0.1) 0%, rgba(255, 255, 255, 1) 100%) !important;
+  border: 2px solid rgba(255, 153, 51, 0.3) !important;
+  border-radius: 15px !important;
+}
+
+/* Section titles with Indian theme */
+.section-title {
+  background: linear-gradient(135deg, var(--orange), var(--gold)) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  font-weight: 800 !important;
+  text-align: center !important;
+  position: relative !important;
+}
+
+.section-title::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -10px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 100px !important;
+  height: 4px !important;
+  background: linear-gradient(90deg, var(--orange), var(--gold), var(--green)) !important;
+  border-radius: 2px !important;
+}
+
+/* Mobile responsive tabs */
+@media (max-width: 768px) {
+  .tabs-nav {
+    max-height: 150px !important;
+  }
+  
+  .tab-btn {
+    font-size: 0.75rem !important;
+    padding: 6px 10px !important;
+  }
+  
+  .tab-content {
+    padding: 20px !important;
+  }
+  
+  .tab-content h3 {
+    font-size: 1.2rem !important;
+  }
+}

@@ -195,7 +195,7 @@ function setupCertificateDownload(fullName, city) {
     // Generate certificate directly
     generateCertificateImage(fullName, city);
     
-    // Trigger download confetti
+    // Trigger download confetti only (no sound)
     triggerDownloadConfetti();
   };
 }

@@ -1,0 +1,93 @@
+/* Certificate Form and Text Fixes */
+
+/* Fix certificate section background and text */
+.certificate-section {
+  background: white !important;
+  color: #333 !important;
+  border-top: 5px solid var(--orange) !important;
+  border-bottom: 5px solid var(--green) !important;
+}
+
+.certificate-section .section-title,
+.certificate-description {
+  color: #333 !important;
+  text-shadow: none !important;
+}
+
+.certificate-form {
+  background: white !important;
+  color: #333 !important;
+  border: 2px solid var(--orange) !important;
+}
+
+.form-group label {
+  color: #333 !important;
+  font-weight: 600 !important;
+}
+
+.form-group input {
+  color: #333 !important;
+  background: white !important;
+  border: 2px solid #ddd !important;
+}
+
+.generate-btn {
+  background: linear-gradient(135deg, var(--orange), var(--gold)) !important;
+  color: white !important;
+}
+
+/* Fix quote section text */
+.quote-section {
+  background: linear-gradient(135deg, var(--orange) 0%, var(--gold) 100%) !important;
+  color: white !important;
+}
+
+.patriotic-quote,
+cite {
+  color: white !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5) !important;
+}
+
+/* Fix hero section with tricolor background */
+.hero-section {
+  background: linear-gradient(135deg, 
+    rgba(255, 153, 51, 0.3) 0%, 
+    rgba(255, 255, 255, 0.9) 33%, 
+    rgba(255, 255, 255, 0.9) 66%, 
+    rgba(19, 136, 8, 0.3) 100%) !important;
+  position: relative !important;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(90deg, transparent 0%, rgba(255,153,51,0.1) 33%, rgba(255,255,255,0.1) 33%, rgba(255,255,255,0.1) 66%, rgba(19,136,8,0.1) 66%, transparent 100%),
+    linear-gradient(45deg, rgba(255,153,51,0.05) 0%, rgba(255,255,255,0.05) 50%, rgba(19,136,8,0.05) 100%);
+  pointer-events: none;
+}
+
+.celebration-text {
+  position: relative !important;
+  z-index: 2 !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3) !important;
+}
+
+.orange-text {
+  color: #ff6600 !important;
+  text-shadow: 2px 2px 6px rgba(255, 102, 0, 0.5) !important;
+}
+
+.blue-text {
+  color: #000080 !important;
+  text-shadow: 2px 2px 6px rgba(0, 0, 128, 0.5) !important;
+}
+
+.green-text {
+  color: #006600 !important;
+  text-shadow: 2px 2px 6px rgba(0, 102, 0, 0.5) !important;
+}

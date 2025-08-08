@@ -12,10 +12,28 @@
   <link rel="stylesheet" href="mobile-fixes.css" />
   <link rel="stylesheet" href="defense-carousel.css" />
   <link rel="stylesheet" href="flag-fixes.css" />
+  <link rel="stylesheet" href="image-quality-fix.css" />
+  <link rel="stylesheet" href="optimized.css" />
+  <link rel="stylesheet" href="enhanced-readability.css" />
+  <link rel="stylesheet" href="timeline-styles.css" />
+  <link rel="stylesheet" href="fixes-optimization.css" />
+  <link rel="stylesheet" href="carousel-styles.css" />
+  <link rel="stylesheet" href="ui-improvements.css" />
+  <link rel="stylesheet" href="visibility-fixes.css" />
+  <link rel="stylesheet" href="final-optimizations.css" />
+  <link rel="stylesheet" href="critical-fixes.css" />
+  <link rel="stylesheet" href="certificate-fixes.css" />
+  <link rel="stylesheet" href="background-fixes.css" />
+  <link rel="stylesheet" href="complete-text-fixes.css" />
+  <link rel="stylesheet" href="india-flag-theme.css" />
+  <link rel="stylesheet" href="final-readability.css" />
+  <link rel="stylesheet" href="theme-toggle.css" />
+  <link rel="stylesheet" href="attractive-theme.css" />
+  <link rel="stylesheet" href="collapsible-fix.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="analytics.js"></script>
+  <script src="real-analytics.js"></script>
 </head>
 <body class="border-india">
   <!-- Preloader -->
@@ -88,7 +106,7 @@
   </div>
 
   <main id="mainContent" style="display:none">
-    <audio id="bgMusic" src="assets/Sare_Jahan_Se_Acha.ogg" preload="auto" loop volume="0.3"></audio>
+    <audio id="bgMusic" src="assets/Sare_Jahan_Se_Acha.ogg" preload="auto" volume="0.3"></audio>
 
     <!-- Hero Section -->
     <header class="hero-section" id="hero">
@@ -264,64 +282,52 @@
       </div>
     </section>
 
-    <!-- Enhanced Defense Gallery -->
+    <!-- Defense Gallery - Grid Layout -->
     <section class="defense-gallery" id="defense">
-      <h2 class="section-title">Indian Armed Forces - Our Pride</h2>
-      <div class="defense-carousel">
-        <div class="defense-slide active">
-          <img src="assets/soldier.jpg" alt="Indian Army Soldier" loading="lazy">
+      <h2 class="section-title">🛡️ Indian Armed Forces - Our Pride</h2>
+      <div class="defense-gallery-grid">
+        <div class="defense-card" onclick="openDefenseModal('army')">
+          <img src="assets/soldier.jpg" alt="Indian Army">
           <div class="defense-overlay">
-            <h3>Indian Army</h3>
+            <h3>🎯 Indian Army</h3>
             <p>Guardians of Our Borders</p>
           </div>
         </div>
-        <div class="defense-slide">
-          <img src="assets/tank.jpg" alt="Indian Tank" loading="lazy">
+        <div class="defense-card" onclick="openDefenseModal('tank')">
+          <img src="assets/tank.jpg" alt="Armored Division">
           <div class="defense-overlay">
-            <h3>Armored Division</h3>
+            <h3>🚗 Armored Division</h3>
             <p>Strength on Ground</p>
           </div>
         </div>
-        <div class="defense-slide">
-          <img src="assets/jet.jpg" alt="Indian Air Force Jet" loading="lazy">
+        <div class="defense-card" onclick="openDefenseModal('airforce')">
+          <img src="assets/jet.jpg" alt="Indian Air Force">
           <div class="defense-overlay">
-            <h3>Indian Air Force</h3>
+            <h3>✈️ Indian Air Force</h3>
             <p>Masters of the Sky</p>
           </div>
         </div>
-        <div class="defense-slide">
-          <img src="assets/ship.jpg" alt="Indian Navy Ship" loading="lazy">
+        <div class="defense-card" onclick="openDefenseModal('navy')">
+          <img src="assets/ship.jpg" alt="Indian Navy">
           <div class="defense-overlay">
-            <h3>Indian Navy</h3>
+            <h3>⛵ Indian Navy</h3>
             <p>Protectors of Our Seas</p>
           </div>
         </div>
-        <div class="defense-slide">
-          <img src="assets/missile.jpg" alt="Indian Missile" loading="lazy">
+        <div class="defense-card" onclick="openDefenseModal('missile')">
+          <img src="assets/missile.jpg" alt="Missile Defense">
           <div class="defense-overlay">
-            <h3>Missile Defense</h3>
-            <p>Advanced Defense Systems</p>
+            <h3>🚀 Missile Defense</h3>
+            <p>Advanced Systems</p>
           </div>
         </div>
-        <div class="defense-slide">
-          <img src="assets/s400.jpg" alt="S-400 Defense System" loading="lazy">
+        <div class="defense-card" onclick="openDefenseModal('s400')">
+          <img src="assets/s400.jpg" alt="S-400 System">
           <div class="defense-overlay">
-            <h3>S-400 System</h3>
+            <h3>🛡️ S-400 System</h3>
             <p>Air Defense Excellence</p>
           </div>
         </div>
-      </div>
-      <div class="defense-navigation">
-        <button class="nav-arrow prev" onclick="changeDefenseSlide(-1)">❮</button>
-        <button class="nav-arrow next" onclick="changeDefenseSlide(1)">❯</button>
-      </div>
-      <div class="defense-dots">
-        <span class="dot active" onclick="currentDefenseSlide(1)"></span>
-        <span class="dot" onclick="currentDefenseSlide(2)"></span>
-        <span class="dot" onclick="currentDefenseSlide(3)"></span>
-        <span class="dot" onclick="currentDefenseSlide(4)"></span>
-        <span class="dot" onclick="currentDefenseSlide(5)"></span>
-        <span class="dot" onclick="currentDefenseSlide(6)"></span>
       </div>
     </section>
 
@@ -465,8 +471,8 @@
       <div class="certificate-content">
         <h2 class="section-title">Certificate of Patriotism</h2>
         <p class="certificate-description">
-          🇮🇳 Express your love for India with a personalized Certificate of Patriotism. 
-          A beautiful way to celebrate your patriotic spirit and share your pride in our great nation!
+          🇮🇳 Get Your Certificate of Patriotism! 
+          Show your love for India with a personalized certificate.
         </p>
         
         <form id="certificateForm" class="certificate-form">
@@ -501,28 +507,7 @@
       </div>
     </section>
 
-    <!-- Live Stats Section -->
-    <section class="stats-section">
-      <h2 class="section-title">Join the Celebration</h2>
-      <div class="stats-container">
-        <div class="stat-item">
-          <div class="stat-number" id="visitorsCount">25,847</div>
-          <div class="stat-label">🇮🇳 Proud Indians Visited</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number" id="certificatesCount">12,394</div>
-          <div class="stat-label">🏆 Certificates Generated</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number" id="sharesCount">8,756</div>
-          <div class="stat-label">📤 Times Shared</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number" id="countriesCount">47</div>
-          <div class="stat-label">🌍 Countries Participating</div>
-        </div>
-      </div>
-    </section>
+
 
 
 
@@ -536,11 +521,9 @@
             <span class="hashtag">#IndependenceDay2025</span>
             <span class="hashtag">#JaiHind</span>
             <span class="hashtag">#ProudIndian</span>
-            <span class="hashtag">#VandeMataram</span>
-            <span class="hashtag">#India78</span>
           </div>
         </div>
-        <p class="share-text">Join <strong>25,847+ Indians</strong> celebrating online! Share and inspire others.</p>
+        <p class="share-text">Join proud Indians celebrating online! Share and inspire others.</p>
         <div class="share-buttons">
           <button class="share-btn facebook" onclick="shareOnFacebook()">
             <span class="share-icon">📘</span>
@@ -565,33 +548,526 @@
       </div>
     </section>
 
-    <!-- Live Feed Section -->
-    <section class="live-feed-section">
-      <h2 class="section-title">🔴 Live Patriotic Moments</h2>
-      <div class="live-feed">
-        <div class="feed-item">
-          <div class="feed-avatar">🇮🇳</div>
-          <div class="feed-content">
-            <strong>Rajesh from Mumbai</strong> just generated their certificate!
-            <span class="feed-time">2 minutes ago</span>
+    <!-- Historical Timeline Section -->
+    <section class="timeline-section">
+      <h2 class="section-title">Journey to Freedom: Historical Timeline</h2>
+      <div class="timeline-container">
+        <div class="timeline-item">
+          <div class="timeline-year">1857</div>
+          <div class="timeline-content">
+            <h3>First War of Independence</h3>
+            <p>The Sepoy Mutiny marked the beginning of organized resistance against British rule, sparking nationwide awareness about independence and the need for unified action against colonial oppression.</p>
           </div>
         </div>
-        <div class="feed-item">
-          <div class="feed-avatar">🏆</div>
-          <div class="feed-content">
-            <strong>Priya from Delhi</strong> shared on Facebook
-            <span class="feed-time">5 minutes ago</span>
+        <div class="timeline-item">
+          <div class="timeline-year">1885</div>
+          <div class="timeline-content">
+            <h3>Formation of Indian National Congress</h3>
+            <p>The INC was established as the first organized political platform to voice Indian concerns and demands for self-governance, laying the foundation for the independence movement.</p>
           </div>
         </div>
-        <div class="feed-item">
-          <div class="feed-avatar">❤️</div>
-          <div class="feed-content">
-            <strong>Amit from Bangalore</strong> completed the patriotic quiz
-            <span class="feed-time">8 minutes ago</span>
+        <div class="timeline-item">
+          <div class="timeline-year">1920</div>
+          <div class="timeline-content">
+            <h3>Non-Cooperation Movement</h3>
+            <p>Gandhi launched the first nationwide mass civil disobedience movement against British rule, uniting millions of Indians in peaceful resistance and boycott of British goods and institutions.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1930</div>
+          <div class="timeline-content">
+            <h3>Salt March (Dandi March)</h3>
+            <p>Gandhi's historic 240-mile march to make salt became a global symbol of peaceful resistance, breaking the British salt monopoly and inspiring civil rights movements worldwide.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1942</div>
+          <div class="timeline-content">
+            <h3>Quit India Movement</h3>
+            <p>Gandhi's final call for immediate British withdrawal mobilized the entire nation in the ultimate push for complete independence, with the slogan 'Do or Die' resonating across India.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1947</div>
+          <div class="timeline-content">
+            <h3>Independence Day</h3>
+            <p>India gained freedom at the stroke of midnight on August 15, 1947, marking the birth of the world's largest democracy and the end of nearly 200 years of British colonial rule.</p>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Cultural Heritage Section - Collapsible -->
+    <section class="heritage-section">
+      <h2 class="section-title">🎨 Rich Cultural Heritage of India</h2>
+      <div class="container">
+        <div class="collapsible-section">
+          <div class="collapsible-header" onclick="toggleCollapsible(this)">
+            <span>🎭 Classical Dance Forms (6 traditions)</span>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="collapsible-content">
+            <div class="heritage-compact">
+              <div class="heritage-item-compact">Bharatanatyam - Tamil Nadu temple dance</div>
+              <div class="heritage-item-compact">Kathak - North Indian storytelling dance</div>
+              <div class="heritage-item-compact">Odissi - Odisha sculptural dance</div>
+              <div class="heritage-item-compact">Kuchipudi - Andhra Pradesh dance-drama</div>
+              <div class="heritage-item-compact">Mohiniyattam - Kerala enchantress dance</div>
+              <div class="heritage-item-compact">Manipuri - Devotional Radha-Krishna dance</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="collapsible-section">
+          <div class="collapsible-header" onclick="toggleCollapsible(this)">
+            <span>🎵 Musical Traditions (6 forms)</span>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="collapsible-content">
+            <div class="heritage-compact">
+              <div class="heritage-item-compact">Hindustani Classical - North Indian ragas</div>
+              <div class="heritage-item-compact">Carnatic Music - South Indian classical</div>
+              <div class="heritage-item-compact">Qawwali - Sufi devotional music</div>
+              <div class="heritage-item-compact">Bhajan - Devotional songs</div>
+              <div class="heritage-item-compact">Ghazal - Poetic musical form</div>
+              <div class="heritage-item-compact">Folk Music - Regional traditional songs</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="collapsible-section">
+          <div class="collapsible-header" onclick="toggleCollapsible(this)">
+            <span>🎨 Traditional Art Forms (6 styles)</span>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="collapsible-content">
+            <div class="heritage-compact">
+              <div class="heritage-item-compact">Madhubani - Bihar folk art</div>
+              <div class="heritage-item-compact">Warli Art - Maharashtra tribal painting</div>
+              <div class="heritage-item-compact">Tanjore - Tamil Nadu classical art</div>
+              <div class="heritage-item-compact">Pattachitra - Odisha cloth painting</div>
+              <div class="heritage-item-compact">Kalamkari - Andhra Pradesh textiles</div>
+              <div class="heritage-item-compact">Gond Art - Madhya Pradesh tribal art</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="collapsible-section">
+          <div class="collapsible-header" onclick="toggleCollapsible(this)">
+            <span>🏛️ Architectural Marvels (6 wonders)</span>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="collapsible-content">
+            <div class="heritage-compact">
+              <div class="heritage-item-compact">Taj Mahal - Agra symbol of love</div>
+              <div class="heritage-item-compact">Red Fort - Delhi Mughal architecture</div>
+              <div class="heritage-item-compact">Ajanta Ellora - Maharashtra rock caves</div>
+              <div class="heritage-item-compact">Khajuraho - Madhya Pradesh temples</div>
+              <div class="heritage-item-compact">Konark Sun Temple - Odisha chariot design</div>
+              <div class="heritage-item-compact">Hampi - Karnataka Vijayanagara ruins</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- States Showcase Section - Tabbed -->
+    <section class="states-section">
+      <h2 class="section-title">🇮🇳 Incredible India: Unity in Diversity</h2>
+      <div class="container">
+        <div class="tabs-container">
+          <div class="tabs-nav">
+            <button class="tab-btn active" onclick="showTab(event, 'andhra')">Andhra Pradesh</button>
+            <button class="tab-btn" onclick="showTab(event, 'arunachal')">Arunachal Pradesh</button>
+            <button class="tab-btn" onclick="showTab(event, 'assam')">Assam</button>
+            <button class="tab-btn" onclick="showTab(event, 'bihar')">Bihar</button>
+            <button class="tab-btn" onclick="showTab(event, 'chhattisgarh')">Chhattisgarh</button>
+            <button class="tab-btn" onclick="showTab(event, 'goa')">Goa</button>
+            <button class="tab-btn" onclick="showTab(event, 'gujarat')">Gujarat</button>
+            <button class="tab-btn" onclick="showTab(event, 'haryana')">Haryana</button>
+            <button class="tab-btn" onclick="showTab(event, 'himachal')">Himachal Pradesh</button>
+            <button class="tab-btn" onclick="showTab(event, 'jharkhand')">Jharkhand</button>
+            <button class="tab-btn" onclick="showTab(event, 'karnataka')">Karnataka</button>
+            <button class="tab-btn" onclick="showTab(event, 'kerala')">Kerala</button>
+            <button class="tab-btn" onclick="showTab(event, 'madhya')">Madhya Pradesh</button>
+            <button class="tab-btn" onclick="showTab(event, 'maharashtra')">Maharashtra</button>
+            <button class="tab-btn" onclick="showTab(event, 'manipur')">Manipur</button>
+            <button class="tab-btn" onclick="showTab(event, 'meghalaya')">Meghalaya</button>
+            <button class="tab-btn" onclick="showTab(event, 'mizoram')">Mizoram</button>
+            <button class="tab-btn" onclick="showTab(event, 'nagaland')">Nagaland</button>
+            <button class="tab-btn" onclick="showTab(event, 'odisha')">Odisha</button>
+            <button class="tab-btn" onclick="showTab(event, 'punjab')">Punjab</button>
+            <button class="tab-btn" onclick="showTab(event, 'rajasthan')">Rajasthan</button>
+            <button class="tab-btn" onclick="showTab(event, 'sikkim')">Sikkim</button>
+            <button class="tab-btn" onclick="showTab(event, 'tamilnadu')">Tamil Nadu</button>
+            <button class="tab-btn" onclick="showTab(event, 'telangana')">Telangana</button>
+            <button class="tab-btn" onclick="showTab(event, 'tripura')">Tripura</button>
+            <button class="tab-btn" onclick="showTab(event, 'uttarpradesh')">Uttar Pradesh</button>
+            <button class="tab-btn" onclick="showTab(event, 'uttarakhand')">Uttarakhand</button>
+            <button class="tab-btn" onclick="showTab(event, 'westbengal')">West Bengal</button>
+            <button class="tab-btn" onclick="showTab(event, 'delhi')">Delhi</button>
+            <button class="tab-btn" onclick="showTab(event, 'jammu')">Jammu & Kashmir</button>
+            <button class="tab-btn" onclick="showTab(event, 'ladakh')">Ladakh</button>
+            <button class="tab-btn" onclick="showTab(event, 'andaman')">Andaman & Nicobar</button>
+            <button class="tab-btn" onclick="showTab(event, 'chandigarh')">Chandigarh</button>
+            <button class="tab-btn" onclick="showTab(event, 'dadra')">Dadra & Nagar Haveli</button>
+            <button class="tab-btn" onclick="showTab(event, 'lakshadweep')">Lakshadweep</button>
+            <button class="tab-btn" onclick="showTab(event, 'puducherry')">Puducherry</button>
+          </div>
+          
+          <div id="andhra" class="tab-content active">
+            <h3>🌶️ Andhra Pradesh - Kohinoor of India</h3>
+            <p><strong>Capital:</strong> Amaravati | <strong>Languages:</strong> Telugu, Urdu</p>
+            <p><strong>Famous for:</strong> Tirupati Temple, Spicy cuisine, Classical dance</p>
+          </div>
+          
+          <div id="arunachal" class="tab-content">
+            <h3>🌄 Arunachal Pradesh - Land of Rising Sun</h3>
+            <p><strong>Capital:</strong> Itanagar | <strong>Languages:</strong> Hindi, English</p>
+            <p><strong>Famous for:</strong> Tawang Monastery, Ziro Valley, Tribal culture</p>
+          </div>
+          
+          <div id="assam" class="tab-content">
+            <h3>🍃 Assam - Gateway to Northeast</h3>
+            <p><strong>Capital:</strong> Dispur | <strong>Languages:</strong> Assamese, Bengali</p>
+            <p><strong>Famous for:</strong> Tea gardens, Kaziranga, One-horned rhino</p>
+          </div>
+          
+          <div id="bihar" class="tab-content">
+            <h3>📚 Bihar - Land of Buddha</h3>
+            <p><strong>Capital:</strong> Patna | <strong>Languages:</strong> Hindi, Bhojpuri</p>
+            <p><strong>Famous for:</strong> Nalanda University, Bodh Gaya, Ancient history</p>
+          </div>
+          
+          <div id="chhattisgarh" class="tab-content">
+            <h3>💎 Chhattisgarh - Rice Bowl of India</h3>
+            <p><strong>Capital:</strong> Raipur | <strong>Languages:</strong> Hindi, Chhattisgarhi</p>
+            <p><strong>Famous for:</strong> Chitrakote Falls, Tribal art, Minerals</p>
+          </div>
+          
+          <div id="goa" class="tab-content">
+            <h3>🏖️ Goa - Pearl of the Orient</h3>
+            <p><strong>Capital:</strong> Panaji | <strong>Languages:</strong> Konkani, Portuguese</p>
+            <p><strong>Famous for:</strong> Beaches, Churches, Carnival, Seafood</p>
+          </div>
+          
+          <div id="gujarat" class="tab-content">
+            <h3>🦁 Gujarat - Jewel of Western India</h3>
+            <p><strong>Capital:</strong> Gandhinagar | <strong>Languages:</strong> Gujarati, Hindi</p>
+            <p><strong>Famous for:</strong> Statue of Unity, Rann of Kutch, Business hub</p>
+          </div>
+          
+          <div id="haryana" class="tab-content">
+            <h3>🥇 Haryana - Land of Rotis</h3>
+            <p><strong>Capital:</strong> Chandigarh | <strong>Languages:</strong> Hindi, Haryanvi</p>
+            <p><strong>Famous for:</strong> Wrestling, Agriculture, Kurukshetra</p>
+          </div>
+          
+          <div id="himachal" class="tab-content">
+            <h3>🏔️ Himachal Pradesh - Dev Bhoomi</h3>
+            <p><strong>Capital:</strong> Shimla | <strong>Languages:</strong> Hindi, Pahari</p>
+            <p><strong>Famous for:</strong> Hill stations, Apple orchards, Adventure sports</p>
+          </div>
+          
+          <div id="jharkhand" class="tab-content">
+            <h3>⛰️ Jharkhand - Land of Forests</h3>
+            <p><strong>Capital:</strong> Ranchi | <strong>Languages:</strong> Hindi, Santali</p>
+            <p><strong>Famous for:</strong> Minerals, Tribal culture, Jamshedpur</p>
+          </div>
+          
+          <div id="karnataka" class="tab-content">
+            <h3>💻 Karnataka - Silicon Valley of India</h3>
+            <p><strong>Capital:</strong> Bengaluru | <strong>Languages:</strong> Kannada, Telugu</p>
+            <p><strong>Famous for:</strong> IT hub, Mysore Palace, Coffee plantations</p>
+          </div>
+          
+          <div id="kerala" class="tab-content">
+            <h3>🌴 Kerala - God's Own Country</h3>
+            <p><strong>Capital:</strong> Thiruvananthapuram | <strong>Languages:</strong> Malayalam, Tamil</p>
+            <p><strong>Famous for:</strong> Backwaters, Ayurveda, Spices, Literacy</p>
+          </div>
+          
+          <div id="madhya" class="tab-content">
+            <h3>🐅 Madhya Pradesh - Heart of India</h3>
+            <p><strong>Capital:</strong> Bhopal | <strong>Languages:</strong> Hindi, Bundeli</p>
+            <p><strong>Famous for:</strong> Khajuraho, Kanha National Park, Sanchi Stupa</p>
+          </div>
+          
+          <div id="maharashtra" class="tab-content">
+            <h3>🎬 Maharashtra - Economic Powerhouse</h3>
+            <p><strong>Capital:</strong> Mumbai | <strong>Languages:</strong> Marathi, Hindi</p>
+            <p><strong>Famous for:</strong> Bollywood, Business hub, Ajanta Ellora</p>
+          </div>
+          
+          <div id="manipur" class="tab-content">
+            <h3>💃 Manipur - Jewel of India</h3>
+            <p><strong>Capital:</strong> Imphal | <strong>Languages:</strong> Manipuri, English</p>
+            <p><strong>Famous for:</strong> Classical dance, Loktak Lake, Sports</p>
+          </div>
+          
+          <div id="meghalaya" class="tab-content">
+            <h3>☔ Meghalaya - Abode of Clouds</h3>
+            <p><strong>Capital:</strong> Shillong | <strong>Languages:</strong> Khasi, Garo</p>
+            <p><strong>Famous for:</strong> Living root bridges, Cherrapunji, Rainfall</p>
+          </div>
+          
+          <div id="mizoram" class="tab-content">
+            <h3>🎋 Mizoram - Land of Blue Mountains</h3>
+            <p><strong>Capital:</strong> Aizawl | <strong>Languages:</strong> Mizo, English</p>
+            <p><strong>Famous for:</strong> Bamboo crafts, Festivals, Scenic beauty</p>
+          </div>
+          
+          <div id="nagaland" class="tab-content">
+            <h3>🦅 Nagaland - Land of Festivals</h3>
+            <p><strong>Capital:</strong> Kohima | <strong>Languages:</strong> English, Naga languages</p>
+            <p><strong>Famous for:</strong> Hornbill Festival, Tribal culture, WWII history</p>
+          </div>
+          
+          <div id="odisha" class="tab-content">
+            <h3>🏛️ Odisha - Soul of India</h3>
+            <p><strong>Capital:</strong> Bhubaneswar | <strong>Languages:</strong> Odia, Hindi</p>
+            <p><strong>Famous for:</strong> Jagannath Temple, Konark Sun Temple, Classical dance</p>
+          </div>
+          
+          <div id="punjab" class="tab-content">
+            <h3>🌾 Punjab - Granary of India</h3>
+            <p><strong>Capital:</strong> Chandigarh | <strong>Languages:</strong> Punjabi, Hindi</p>
+            <p><strong>Famous for:</strong> Golden Temple, Agriculture, Bhangra dance</p>
+          </div>
+          
+          <div id="rajasthan" class="tab-content">
+            <h3>🏰 Rajasthan - Land of Kings</h3>
+            <p><strong>Capital:</strong> Jaipur | <strong>Languages:</strong> Hindi, Rajasthani</p>
+            <p><strong>Famous for:</strong> Royal palaces, Thar Desert, Colorful festivals</p>
+          </div>
+          
+          <div id="sikkim" class="tab-content">
+            <h3>🏔️ Sikkim - Organic State</h3>
+            <p><strong>Capital:</strong> Gangtok | <strong>Languages:</strong> Nepali, Sikkimese</p>
+            <p><strong>Famous for:</strong> Kanchenjunga, Buddhism, Organic farming</p>
+          </div>
+          
+          <div id="tamilnadu" class="tab-content">
+            <h3>🏛️ Tamil Nadu - Land of Temples</h3>
+            <p><strong>Capital:</strong> Chennai | <strong>Languages:</strong> Tamil, English</p>
+            <p><strong>Famous for:</strong> Meenakshi Temple, Classical arts, Marina Beach</p>
+          </div>
+          
+          <div id="telangana" class="tab-content">
+            <h3>💊 Telangana - Cyberabad</h3>
+            <p><strong>Capital:</strong> Hyderabad | <strong>Languages:</strong> Telugu, Urdu</p>
+            <p><strong>Famous for:</strong> IT sector, Charminar, Biryani, Pharmaceuticals</p>
+          </div>
+          
+          <div id="tripura" class="tab-content">
+            <h3>🏰 Tripura - Land of Diversity</h3>
+            <p><strong>Capital:</strong> Agartala | <strong>Languages:</strong> Bengali, Tripuri</p>
+            <p><strong>Famous for:</strong> Ujjayanta Palace, Neermahal, Bamboo crafts</p>
+          </div>
+          
+          <div id="uttarpradesh" class="tab-content">
+            <h3>🕌 Uttar Pradesh - Heartland of India</h3>
+            <p><strong>Capital:</strong> Lucknow | <strong>Languages:</strong> Hindi, Urdu</p>
+            <p><strong>Famous for:</strong> Taj Mahal, Varanasi, Ayodhya, Agra Fort</p>
+          </div>
+          
+          <div id="uttarakhand" class="tab-content">
+            <h3>🏔️ Uttarakhand - Dev Bhoomi</h3>
+            <p><strong>Capital:</strong> Dehradun | <strong>Languages:</strong> Hindi, Garhwali</p>
+            <p><strong>Famous for:</strong> Char Dham, Valley of Flowers, Yoga capital</p>
+          </div>
+          
+          <div id="westbengal" class="tab-content">
+            <h3>🎨 West Bengal - Cultural Capital</h3>
+            <p><strong>Capital:</strong> Kolkata | <strong>Languages:</strong> Bengali, Hindi</p>
+            <p><strong>Famous for:</strong> Literature, Durga Puja, Sweets, Tagore</p>
+          </div>
+          
+          <div id="delhi" class="tab-content">
+            <h3>🏛️ Delhi - National Capital Territory</h3>
+            <p><strong>Capital:</strong> New Delhi | <strong>Languages:</strong> Hindi, English</p>
+            <p><strong>Famous for:</strong> Red Fort, India Gate, Parliament, Qutub Minar</p>
+          </div>
+          
+          <div id="jammu" class="tab-content">
+            <h3>🏔️ Jammu & Kashmir - Paradise on Earth</h3>
+            <p><strong>Capital:</strong> Srinagar (Summer), Jammu (Winter) | <strong>Languages:</strong> Kashmiri, Urdu</p>
+            <p><strong>Famous for:</strong> Dal Lake, Houseboats, Saffron, Handicrafts</p>
+          </div>
+          
+          <div id="ladakh" class="tab-content">
+            <h3>🏔️ Ladakh - Land of High Passes</h3>
+            <p><strong>Capital:</strong> Leh | <strong>Languages:</strong> Ladakhi, Hindi</p>
+            <p><strong>Famous for:</strong> Monasteries, Adventure tourism, Cold desert</p>
+          </div>
+          
+          <div id="andaman" class="tab-content">
+            <h3>🏝️ Andaman & Nicobar Islands</h3>
+            <p><strong>Capital:</strong> Port Blair | <strong>Languages:</strong> Hindi, English</p>
+            <p><strong>Famous for:</strong> Cellular Jail, Beaches, Marine life</p>
+          </div>
+          
+          <div id="chandigarh" class="tab-content">
+            <h3>🌹 Chandigarh - City Beautiful</h3>
+            <p><strong>Capital:</strong> Chandigarh | <strong>Languages:</strong> Hindi, Punjabi</p>
+            <p><strong>Famous for:</strong> Rock Garden, Planned city, Rose Garden</p>
+          </div>
+          
+          <div id="dadra" class="tab-content">
+            <h3>🌿 Dadra & Nagar Haveli and Daman & Diu</h3>
+            <p><strong>Capital:</strong> Daman | <strong>Languages:</strong> Gujarati, Hindi</p>
+            <p><strong>Famous for:</strong> Beaches, Portuguese heritage, Tribal culture</p>
+          </div>
+          
+          <div id="lakshadweep" class="tab-content">
+            <h3>🏝️ Lakshadweep - Coral Paradise</h3>
+            <p><strong>Capital:</strong> Kavaratti | <strong>Languages:</strong> Malayalam, English</p>
+            <p><strong>Famous for:</strong> Coral reefs, Lagoons, Water sports</p>
+          </div>
+          
+          <div id="puducherry" class="tab-content">
+            <h3>🏛️ Puducherry - French Riviera of East</h3>
+            <p><strong>Capital:</strong> Puducherry | <strong>Languages:</strong> Tamil, French</p>
+            <p><strong>Famous for:</strong> French architecture, Auroville, Beaches</p>
+          </div>
+          
+          <div id="himachal" class="tab-content">
+            <h3>🏔️ Himachal Pradesh - Land of Gods</h3>
+            <p><strong>Capital:</strong> Shimla | <strong>Languages:</strong> Hindi, Pahari, Punjabi</p>
+            <p><strong>Famous for:</strong> Hill stations, Adventure sports, Apple orchards</p>
+          </div>
+          
+          <div id="rajasthan" class="tab-content">
+            <h3>🏰 Rajasthan - Land of Kings</h3>
+            <p><strong>Capital:</strong> Jaipur (Pink City) | <strong>Languages:</strong> Hindi, Rajasthani</p>
+            <p><strong>Famous for:</strong> Royal palaces, Thar Desert, Colorful festivals</p>
+          </div>
+          
+          <div id="karnataka" class="tab-content">
+            <h3>💻 Karnataka - Silicon Valley of India</h3>
+            <p><strong>Capital:</strong> Bengaluru | <strong>Languages:</strong> Kannada, Telugu, English</p>
+            <p><strong>Famous for:</strong> IT hub, Mysore Palace, Coffee plantations</p>
+          </div>
+          
+          <div id="maharashtra" class="tab-content">
+            <h3>🏭 Maharashtra - Economic Powerhouse</h3>
+            <p><strong>Capital:</strong> Mumbai | <strong>Languages:</strong> Marathi, Hindi, English</p>
+            <p><strong>Famous for:</strong> Bollywood, Business hub, Ajanta Ellora caves</p>
+          </div>
+          
+          <div id="punjab" class="tab-content">
+            <h3>🌾 Punjab - Granary of India</h3>
+            <p><strong>Capital:</strong> Chandigarh | <strong>Languages:</strong> Punjabi, Hindi, Urdu</p>
+            <p><strong>Famous for:</strong> Golden Temple, Agriculture, Bhangra dance</p>
+          </div>
+          
+          <div id="goa" class="tab-content">
+            <h3>🏖️ Goa - Pearl of the Orient</h3>
+            <p><strong>Capital:</strong> Panaji | <strong>Languages:</strong> Konkani, Portuguese, English</p>
+            <p><strong>Famous for:</strong> Beaches, Portuguese heritage, Carnival</p>
+          </div>
+          
+          <div id="gujarat" class="tab-content">
+            <h3>🏭 Gujarat - Jewel of Western India</h3>
+            <p><strong>Capital:</strong> Gandhinagar | <strong>Languages:</strong> Gujarati, Hindi</p>
+            <p><strong>Famous for:</strong> Statue of Unity, Business hub, Rann of Kutch</p>
+          </div>
+          
+          <div id="tamilnadu" class="tab-content">
+            <h3>🏛️ Tamil Nadu - Land of Temples</h3>
+            <p><strong>Capital:</strong> Chennai | <strong>Languages:</strong> Tamil, English</p>
+            <p><strong>Famous for:</strong> Meenakshi Temple, Classical arts, Marina Beach</p>
+          </div>
+          
+          <div id="westbengal" class="tab-content">
+            <h3>🎨 West Bengal - Cultural Capital</h3>
+            <p><strong>Capital:</strong> Kolkata | <strong>Languages:</strong> Bengali, Hindi, English</p>
+            <p><strong>Famous for:</strong> Literature, Durga Puja, Sweets, Victoria Memorial</p>
+          </div>
+          
+          <div id="uttarpradesh" class="tab-content">
+            <h3>🖕 Uttar Pradesh - Heartland of India</h3>
+            <p><strong>Capital:</strong> Lucknow | <strong>Languages:</strong> Hindi, Urdu</p>
+            <p><strong>Famous for:</strong> Taj Mahal, Varanasi, Ayodhya, Agra Fort</p>
+          </div>
+          
+          <div id="delhi" class="tab-content">
+            <h3>🏢 Delhi - Capital Territory</h3>
+            <p><strong>Capital:</strong> New Delhi | <strong>Languages:</strong> Hindi, English, Punjabi</p>
+            <p><strong>Famous for:</strong> Red Fort, India Gate, Parliament, Qutub Minar</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modern Achievements Section -->
+    <section class="achievements-modern">
+      <h2 class="section-title">Modern India: Global Leadership & Innovation</h2>
+      <div class="achievements-categories">
+        <div class="achievement-category">
+          <h3>🚀 Space Technology Excellence</h3>
+          <ul>
+            <li>Chandrayaan-3: Historic successful Moon landing at South Pole, making India 4th country to achieve this feat</li>
+            <li>Mars Orbiter Mission: Most cost-effective Mars exploration mission in the world at just $74 million</li>
+            <li>ISRO: World's most cost-effective space agency with highest success rate in satellite launches</li>
+            <li>Record Launch: 104 satellites launched in single mission, creating world record in 2017</li>
+            <li>Gaganyaan Mission: Upcoming human spaceflight program to establish India as space power</li>
+          </ul>
+        </div>
+        <div class="achievement-category">
+          <h3>💻 Technology & Digital Innovation</h3>
+          <ul>
+            <li>UPI Revolution: Unified Payments Interface processing over 10 billion transactions monthly</li>
+            <li>Aadhaar System: World's largest biometric identification system covering 1.3+ billion people</li>
+            <li>Digital India Initiative: Massive digitization program transforming governance and services</li>
+            <li>CoWIN Platform: World's largest vaccination management system during COVID-19 pandemic</li>
+            <li>JAM Trinity: Integration of Jan Dhan, Aadhaar, Mobile for financial inclusion</li>
+          </ul>
+        </div>
+        <div class="achievement-category">
+          <h3>🛡️ Defense & Security Capabilities</h3>
+          <ul>
+            <li>Nuclear Capability: Successful nuclear tests establishing India as responsible nuclear power</li>
+            <li>Indigenous Defense: Tejas fighter jet, Arjun tank, and other homegrown defense systems</li>
+            <li>Missile Technology: Advanced Agni, Prithvi, BrahMos missile systems with precision targeting</li>
+            <li>Naval Strength: Indigenous aircraft carrier INS Vikrant showcasing maritime capabilities</li>
+            <li>Cyber Security: Advanced cyber defense infrastructure protecting national interests</li>
+          </ul>
+        </div>
+        <div class="achievement-category">
+          <h3>💰 Economic Growth & Development</h3>
+          <ul>
+            <li>5th Largest Economy: India's GDP crossing $3.7 trillion, becoming global economic powerhouse</li>
+            <li>Startup Ecosystem: 3rd largest startup ecosystem globally with 100+ unicorn companies</li>
+            <li>Manufacturing Hub: Make in India initiative attracting global manufacturers and investments</li>
+            <li>Service Sector Leadership: Global leader in IT services, business process outsourcing</li>
+            <li>Financial Inclusion: 80% population now has bank accounts, up from 35% in 2011</li>
+          </ul>
+        </div>
+        <div class="achievement-category">
+          <h3>🏥 Healthcare & Medical Innovation</h3>
+          <ul>
+            <li>Vaccine Production: World's largest vaccine manufacturer, producing 60% of global vaccines</li>
+            <li>Generic Medicine Hub: Pharmacy of the world, supplying affordable medicines globally</li>
+            <li>Ayushman Bharat: World's largest healthcare scheme covering 500+ million people</li>
+            <li>Medical Tourism: Leading destination for affordable, quality medical treatments</li>
+            <li>COVID Response: Rapid vaccine development and distribution to 100+ countries</li>
+          </ul>
+        </div>
+        <div class="achievement-category">
+          <h3>🌱 Environmental & Sustainability Leadership</h3>
+          <ul>
+            <li>Solar Power Revolution: 3rd largest solar power capacity with ambitious renewable targets</li>
+            <li>International Solar Alliance: Leading 121 countries towards solar energy adoption</li>
+            <li>Forest Cover Increase: One of few countries increasing forest cover annually</li>
+            <li>Electric Vehicle Push: Massive EV adoption program for sustainable transportation</li>
+            <li>Plastic Ban Initiative: Comprehensive single-use plastic elimination program</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
 
     <!-- Viral Sharing Section -->
     <section class="viral-section">
@@ -679,6 +1155,11 @@
     </footer>
   </main>
 
+  <!-- Progress Bar -->
+  <div class="progress-bar" id="progressBar"></div>
+  
+
+  
   <!-- Enhanced Floating Elements -->
   <div class="floating-elements">
     <div class="floating-flag">🇮🇳</div>
@@ -688,10 +1169,17 @@
 
 
 
-  <!-- Music Control -->
-  <div class="music-control">
+  <!-- Music Control - Hidden initially -->
+  <div class="music-control" id="musicControl">
     <button id="musicToggle" class="music-btn">
       <span class="music-icon">🎵</span>
+    </button>
+  </div>
+
+  <!-- Theme Toggle -->
+  <div class="theme-toggle">
+    <button id="themeToggle" class="theme-btn" onclick="toggleTheme()">
+      <span class="theme-icon">🌙</span>
     </button>
   </div>
 
@@ -701,6 +1189,13 @@
   <script src="additional-animations.js"></script>
   <script src="audio-fixes.js"></script>
   <script src="certificate-popup.js"></script>
+  <script src="optimized.js"></script>
+  <script src="comprehensive-content.js"></script>
+  <script src="data-storage.js"></script>
+  <script src="carousel-script.js"></script>
+  <script src="music-control.js"></script>
+  <script src="interactive-features.js"></script>
+  <script src="theme-toggle.js"></script>
   <script>
     // Enhanced sharing with tracking
     function updateShareCount() {

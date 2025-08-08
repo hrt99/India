@@ -1,0 +1,116 @@
+/* Collapsible Section Fixes */
+.heritage-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.collapsible-section {
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.collapsible-header {
+  background: linear-gradient(135deg, var(--orange) 0%, #ff7700 100%);
+  color: white;
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.collapsible-header:hover {
+  background: linear-gradient(135deg, #ff7700 0%, var(--orange) 100%);
+  transform: translateY(-1px);
+}
+
+.collapsible-header.active {
+  background: linear-gradient(135deg, var(--green) 0%, #0d5f0d 100%);
+}
+
+.toggle-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.collapsible-header.active .toggle-icon {
+  transform: rotate(180deg);
+}
+
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+  background: white;
+}
+
+.collapsible-content.active {
+  max-height: 800px; /* Increased to ensure all content is visible */
+  padding: 20px;
+}
+
+.heritage-compact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+}
+
+.heritage-item-compact {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid var(--orange);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.heritage-item-compact:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-left-color: var(--green);
+}
+
+.heritage-item-compact:nth-child(even) {
+  border-left-color: var(--green);
+}
+
+.heritage-item-compact:nth-child(3n) {
+  border-left-color: var(--blue);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .heritage-compact {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .collapsible-header {
+    padding: 15px;
+    font-size: 1rem;
+  }
+  
+  .collapsible-content.active {
+    max-height: 1200px; /* Increased for mobile to accommodate single column layout */
+    padding: 15px;
+  }
+  
+  .heritage-item-compact {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .collapsible-content.active {
+    max-height: 1500px; /* Even more height for very small screens */
+  }
+}

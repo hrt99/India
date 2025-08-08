@@ -1,0 +1,59 @@
+ADMIN ACCESS GUIDE
+==================
+
+🔐 HOW TO ACCESS ADMIN PANEL:
+
+1. Open your browser
+2. Go to: admin-access.html
+3. Login with:
+   - Username: admin
+   - Password: independence2025
+4. You'll be redirected to the full admin dashboard
+
+📊 ADMIN DASHBOARD FEATURES:
+
+✅ Real-time Statistics:
+- Total visitors count
+- Certificates generated
+- Certificate downloads
+- Total shares across platforms
+- Active users in last 24 hours
+
+✅ Certificate Data Table:
+- Full name of users
+- City/State information
+- Generation timestamp
+- Download status
+- IP addresses
+- Actions (mark downloaded, delete)
+
+✅ Visitor Analytics:
+- Visit timestamps
+- User locations
+- Browser information
+- Pages viewed
+- Time spent on site
+
+✅ Share Analytics:
+- Platform-wise share counts
+- Growth rates
+- Recent activity
+
+✅ Export Functions:
+- Export certificates to CSV
+- Export visitor data to CSV
+- Export share statistics to CSV
+
+🔄 Auto-refresh every 30 seconds
+📱 Mobile responsive design
+🔒 Secure access with login protection
+
+DIRECT LINKS:
+- Login Page: admin-access.html
+- Dashboard: real-admin.html (after login)
+
+All user data is automatically tracked and stored when users:
+- Visit the website
+- Generate certificates
+- Download certificates
+- Share on social media

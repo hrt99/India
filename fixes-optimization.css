@@ -1,0 +1,178 @@
+/* Critical Fixes and Optimizations */
+
+/* Fix hero section background */
+.hero-section {
+  background: linear-gradient(135deg, #fff5f0 0%, #f0f8ff 50%, #f0fff0 100%) !important;
+  color: #333 !important;
+}
+
+.celebration-text {
+  color: #333 !important;
+}
+
+.orange-text {
+  color: var(--orange) !important;
+  text-shadow: 2px 2px 4px rgba(255, 153, 51, 0.3) !important;
+}
+
+.blue-text {
+  color: var(--blue) !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 128, 0.3) !important;
+}
+
+.green-text {
+  color: var(--green) !important;
+  text-shadow: 2px 2px 4px rgba(19, 136, 8, 0.3) !important;
+}
+
+/* Fix text readability */
+.timeline-section .section-title,
+.heritage-section .section-title,
+.states-section .section-title,
+.achievements-modern .section-title {
+  color: #333 !important;
+  text-shadow: none !important;
+}
+
+.heritage-section .section-title,
+.states-section .section-title {
+  color: white !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5) !important;
+}
+
+/* Compact sections - reduce padding */
+section {
+  padding: 40px 20px !important;
+}
+
+.timeline-item {
+  margin-bottom: 30px !important;
+}
+
+.timeline-content {
+  padding: 20px !important;
+}
+
+.heritage-category,
+.state-card,
+.achievement-category {
+  padding: 20px !important;
+}
+
+/* Show all defense photos in carousel */
+.dual-gallery {
+  display: flex !important;
+  overflow-x: auto !important;
+  gap: 20px !important;
+  padding: 20px 0 !important;
+  scroll-behavior: smooth !important;
+}
+
+.photo-card {
+  min-width: 300px !important;
+  flex-shrink: 0 !important;
+  display: block !important;
+}
+
+.photo-card.hidden {
+  display: block !important;
+}
+
+/* Animated elements */
+.timeline-item {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideInUp 0.6s ease forwards;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.2s; }
+.timeline-item:nth-child(3) { animation-delay: 0.3s; }
+.timeline-item:nth-child(4) { animation-delay: 0.4s; }
+.timeline-item:nth-child(5) { animation-delay: 0.5s; }
+.timeline-item:nth-child(6) { animation-delay: 0.6s; }
+
+.heritage-category,
+.state-card,
+.achievement-category {
+  opacity: 0;
+  transform: scale(0.9);
+  animation: fadeInScale 0.6s ease forwards;
+}
+
+.heritage-category:nth-child(1) { animation-delay: 0.1s; }
+.heritage-category:nth-child(2) { animation-delay: 0.2s; }
+.heritage-category:nth-child(3) { animation-delay: 0.3s; }
+.heritage-category:nth-child(4) { animation-delay: 0.4s; }
+
+/* Hover effects */
+.heritage-item:hover,
+.state-card:hover,
+.achievement-category:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2) !important;
+}
+
+/* Better mobile layout */
+@media (max-width: 768px) {
+  .dual-gallery {
+    flex-direction: column !important;
+  }
+  
+  .photo-card {
+    min-width: 100% !important;
+  }
+  
+  .heritage-grid,
+  .states-grid,
+  .achievements-categories {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+}
+
+/* Animations */
+@keyframes slideInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Parallax effect for sections */
+.timeline-section,
+.heritage-section,
+.states-section,
+.achievements-modern {
+  background-attachment: fixed !important;
+}
+
+/* Gradient overlays */
+.heritage-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(19, 136, 8, 0.1), rgba(255, 153, 51, 0.1));
+  pointer-events: none;
+}
+
+.states-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(0, 0, 128, 0.1), rgba(19, 136, 8, 0.1));
+  pointer-events: none;
+}

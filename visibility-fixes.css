@@ -1,0 +1,161 @@
+/* Critical Visibility and Text Fixes */
+
+/* Fix viral section text visibility */
+.viral-section {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.95) 100%) !important;
+  color: #333 !important;
+}
+
+.viral-section .section-title,
+.viral-section .share-message h3,
+.viral-section .share-message p,
+.viral-section .share-incentive p {
+  color: #333 !important;
+  text-shadow: none !important;
+}
+
+.viral-stat .stat-number {
+  color: var(--orange) !important;
+}
+
+.viral-stat .stat-label {
+  color: #666 !important;
+}
+
+/* Fix certificate section visibility */
+.certificate-section .section-title {
+  color: #333 !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+/* Fix share section text */
+.share-section .section-title {
+  color: white !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5) !important;
+}
+
+/* Fix heritage section text */
+.heritage-section {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.95) 100%) !important;
+  color: #333 !important;
+}
+
+.heritage-section .section-title {
+  color: #333 !important;
+  text-shadow: none !important;
+}
+
+.collapsible-header {
+  background: linear-gradient(135deg, var(--orange), var(--gold)) !important;
+  color: white !important;
+}
+
+.collapsible-content {
+  background: white !important;
+  color: #333 !important;
+}
+
+.heritage-item-compact {
+  background: rgba(255, 153, 51, 0.1) !important;
+  color: #333 !important;
+  border-left: 3px solid var(--orange) !important;
+}
+
+/* Fix states section */
+.states-section {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.95) 100%) !important;
+  color: #333 !important;
+}
+
+.states-section .section-title {
+  color: #333 !important;
+  text-shadow: none !important;
+}
+
+.tabs-container {
+  background: white !important;
+  color: #333 !important;
+}
+
+.tab-content {
+  color: #333 !important;
+}
+
+.tab-content h3 {
+  color: var(--orange) !important;
+}
+
+/* Fix achievements section */
+.achievements-modern .section-title {
+  color: #333 !important;
+}
+
+.achievement-category h3 {
+  color: var(--dark-blue) !important;
+}
+
+.achievement-category li {
+  color: #666 !important;
+}
+
+/* Hide stats from normal users */
+.stats-section {
+  display: none !important;
+}
+
+/* Better button visibility */
+.mega-share-btn {
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: #333 !important;
+  border: 2px solid var(--orange) !important;
+}
+
+.mega-share-btn:hover {
+  background: var(--orange) !important;
+  color: white !important;
+}
+
+/* Fix trending hashtags */
+.trending-hashtags h3 {
+  color: var(--orange) !important;
+}
+
+.hashtag {
+  background: rgba(255, 153, 51, 0.1) !important;
+  color: #333 !important;
+  border: 1px solid var(--orange) !important;
+}
+
+/* Better contrast for all text */
+p, li, span, div {
+  color: inherit !important;
+}
+
+/* Ensure white text only on dark backgrounds */
+.hero-section, .quote-section, .countdown-section, .defense-gallery, .tribute-section, .values-section, .share-section, .main-footer {
+  /* Keep existing dark background sections */
+}
+
+/* Light background sections */
+.timeline-section, .heritage-section, .states-section, .achievements-modern, .certificate-section, .viral-section, .live-feed-section {
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: #333 !important;
+}
+
+/* Fix any remaining visibility issues */
+.section-title {
+  color: #333 !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1) !important;
+}
+
+/* Dark sections keep white text */
+.quote-section .section-title,
+.countdown-section .section-title,
+.defense-gallery .section-title,
+.tribute-section .section-title,
+.values-section .section-title,
+.share-section .section-title,
+.main-footer .section-title {
+  color: white !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5) !important;
+}

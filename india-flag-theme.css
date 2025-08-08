@@ -1,0 +1,218 @@
+/* India Flag Theme with Proper Readability */
+
+/* Hero section with animated tricolor background */
+.hero-section {
+  background: linear-gradient(135deg, 
+    rgba(255, 153, 51, 0.15) 0%, 
+    rgba(255, 255, 255, 0.95) 33%, 
+    rgba(255, 255, 255, 0.95) 66%, 
+    rgba(19, 136, 8, 0.15) 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    rgba(255, 153, 51, 0.05) 0%, 
+    rgba(255, 255, 255, 0.1) 50%, 
+    rgba(19, 136, 8, 0.05) 100%);
+  pointer-events: none;
+}
+
+.celebration-text {
+  color: #333 !important;
+  text-shadow: 2px 2px 4px rgba(255,255,255,0.8) !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.orange-text {
+  color: #ff6600 !important;
+  text-shadow: 2px 2px 4px rgba(255, 102, 0, 0.3) !important;
+}
+
+.blue-text {
+  color: #000080 !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 128, 0.3) !important;
+}
+
+.green-text {
+  color: #006600 !important;
+  text-shadow: 2px 2px 4px rgba(0, 102, 0, 0.3) !important;
+}
+
+/* Share section - white background with dark text */
+.share-section {
+  background: white !important;
+  color: #333 !important;
+  border-top: 5px solid var(--orange) !important;
+  border-bottom: 5px solid var(--green) !important;
+  position: relative !important;
+}
+
+.share-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, 
+    rgba(255, 153, 51, 0.02) 0%, 
+    rgba(255, 255, 255, 0.02) 50%, 
+    rgba(19, 136, 8, 0.02) 100%);
+  pointer-events: none;
+}
+
+.share-section .section-title {
+  color: #333 !important;
+  text-shadow: none !important;
+  font-weight: 700 !important;
+}
+
+.share-text {
+  color: #333 !important;
+  font-weight: 500 !important;
+}
+
+.trending-hashtags h3 {
+  color: var(--orange) !important;
+  font-weight: 600 !important;
+}
+
+.hashtag {
+  background: rgba(255, 153, 51, 0.1) !important;
+  color: #333 !important;
+  border: 1px solid var(--orange) !important;
+  font-weight: 500 !important;
+}
+
+.share-btn {
+  background: white !important;
+  color: #333 !important;
+  border: 2px solid var(--orange) !important;
+  font-weight: 600 !important;
+  text-shadow: none !important;
+}
+
+.share-btn:hover {
+  background: var(--orange) !important;
+  color: white !important;
+}
+
+/* Viral section fixes */
+.viral-section {
+  background: white !important;
+  color: #333 !important;
+}
+
+.viral-section .section-title,
+.viral-section .share-message h3,
+.viral-section .share-message p,
+.viral-section .share-incentive p {
+  color: #333 !important;
+  text-shadow: none !important;
+  font-weight: 500 !important;
+}
+
+.mega-share-btn {
+  background: white !important;
+  color: #333 !important;
+  border: 2px solid var(--orange) !important;
+  font-weight: 600 !important;
+}
+
+.mega-share-btn:hover {
+  background: var(--orange) !important;
+  color: white !important;
+}
+
+/* Certificate section */
+.certificate-section {
+  background: white !important;
+  color: #333 !important;
+  border-top: 5px solid var(--orange) !important;
+  border-bottom: 5px solid var(--green) !important;
+}
+
+.certificate-section .section-title,
+.certificate-description {
+  color: #333 !important;
+  text-shadow: none !important;
+  font-weight: 500 !important;
+}
+
+/* All light sections consistent theme */
+.timeline-section,
+.heritage-section,
+.states-section,
+.achievements-modern,
+.tribute-section,
+.values-section {
+  background: white !important;
+  color: #333 !important;
+  border-top: 3px solid var(--orange) !important;
+}
+
+/* Section titles consistent */
+.section-title {
+  color: #333 !important;
+  text-shadow: none !important;
+  font-weight: 700 !important;
+  position: relative !important;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--orange), var(--green));
+  border-radius: 2px;
+}
+
+/* Ensure all text in light sections is dark */
+.share-section *,
+.viral-section *,
+.certificate-section *,
+.timeline-section *,
+.heritage-section *,
+.states-section *,
+.achievements-modern *,
+.tribute-section *,
+.values-section * {
+  color: #333 !important;
+}
+
+/* Keep only essential dark sections */
+.quote-section,
+.countdown-section,
+.defense-gallery,
+.main-footer {
+  /* Keep existing dark styling */
+}
+
+/* Animated elements */
+.hero-content {
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

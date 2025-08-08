@@ -1,0 +1,239 @@
+/* Final Readability Fixes - High Contrast */
+
+/* Force all text to be dark and readable */
+* {
+  color: #222 !important;
+}
+
+/* White backgrounds for all light sections */
+.hero-section,
+.timeline-section,
+.heritage-section,
+.states-section,
+.achievements-modern,
+.certificate-section,
+.viral-section,
+.tribute-section,
+.values-section,
+.share-section,
+.live-feed-section {
+  background: white !important;
+  color: #222 !important;
+}
+
+/* All text in light sections - dark and bold */
+.hero-section *,
+.timeline-section *,
+.heritage-section *,
+.states-section *,
+.achievements-modern *,
+.certificate-section *,
+.viral-section *,
+.tribute-section *,
+.values-section *,
+.share-section *,
+.live-feed-section * {
+  color: #222 !important;
+  font-weight: 500 !important;
+}
+
+/* Section titles - very dark and bold */
+.section-title {
+  color: #000 !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
+  font-size: 2.5rem !important;
+}
+
+/* Hero section text - very readable */
+.celebration-text {
+  color: #000 !important;
+  font-weight: 800 !important;
+  text-shadow: 2px 2px 4px rgba(255,255,255,0.8) !important;
+}
+
+.orange-text {
+  color: #cc5500 !important;
+  font-weight: 800 !important;
+}
+
+.blue-text {
+  color: #000066 !important;
+  font-weight: 800 !important;
+}
+
+.green-text {
+  color: #004400 !important;
+  font-weight: 800 !important;
+}
+
+/* Trending section - high contrast */
+.trending-hashtags {
+  background: rgba(255, 153, 51, 0.2) !important;
+  padding: 20px !important;
+  border-radius: 10px !important;
+  border: 2px solid var(--orange) !important;
+}
+
+.trending-hashtags h3 {
+  color: #000 !important;
+  font-weight: 800 !important;
+  font-size: 1.5rem !important;
+}
+
+.hashtag {
+  background: var(--orange) !important;
+  color: white !important;
+  font-weight: 700 !important;
+  padding: 8px 15px !important;
+  border: none !important;
+}
+
+.share-text {
+  color: #000 !important;
+  font-weight: 600 !important;
+  font-size: 1.2rem !important;
+}
+
+/* Share buttons - high contrast */
+.share-btn {
+  background: var(--orange) !important;
+  color: white !important;
+  font-weight: 700 !important;
+  border: 3px solid #cc5500 !important;
+}
+
+.mega-share-btn {
+  background: var(--orange) !important;
+  color: white !important;
+  font-weight: 700 !important;
+  border: 3px solid #cc5500 !important;
+}
+
+/* Certificate section - very readable */
+.certificate-description {
+  color: #000 !important;
+  font-weight: 600 !important;
+  font-size: 1.3rem !important;
+}
+
+.form-group label {
+  color: #000 !important;
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+}
+
+/* Cards and content boxes */
+.hero-card,
+.achievement-item,
+.value-item,
+.state-card,
+.heritage-item-compact,
+.collapsible-content,
+.tab-content {
+  background: white !important;
+  color: #222 !important;
+  border: 2px solid #ddd !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+}
+
+/* Hero names and quotes */
+.hero-name {
+  color: #000 !important;
+  font-weight: 800 !important;
+}
+
+.hero-title {
+  color: #444 !important;
+  font-weight: 600 !important;
+}
+
+.hero-quote {
+  color: var(--orange) !important;
+  font-weight: 600 !important;
+}
+
+/* Timeline content */
+.timeline-content h3 {
+  color: #000 !important;
+  font-weight: 700 !important;
+}
+
+.timeline-content p {
+  color: #333 !important;
+  font-weight: 500 !important;
+}
+
+/* Achievement items */
+.achievement-item h3 {
+  color: #000 !important;
+  font-weight: 700 !important;
+}
+
+.achievement-item p,
+.achievement-category li {
+  color: #444 !important;
+  font-weight: 500 !important;
+}
+
+/* Value items */
+.value-item h3 {
+  color: #000 !important;
+  font-weight: 700 !important;
+}
+
+.value-item p {
+  color: #444 !important;
+  font-weight: 500 !important;
+}
+
+/* Tab content */
+.tab-content h3 {
+  color: var(--orange) !important;
+  font-weight: 700 !important;
+}
+
+.tab-content p {
+  color: #333 !important;
+  font-weight: 500 !important;
+}
+
+/* Collapsible headers */
+.collapsible-header {
+  background: var(--orange) !important;
+  color: white !important;
+  font-weight: 700 !important;
+}
+
+/* Keep dark sections readable */
+.quote-section,
+.countdown-section,
+.defense-gallery,
+.main-footer {
+  background: #333 !important;
+  color: white !important;
+}
+
+.quote-section *,
+.countdown-section *,
+.defense-gallery *,
+.main-footer * {
+  color: white !important;
+  font-weight: 500 !important;
+}
+
+/* Preloader text */
+.loading-text {
+  color: #000 !important;
+  font-weight: 800 !important;
+  font-size: 2rem !important;
+}
+
+/* Jet intro text */
+.bharat-title,
+.india-title,
+.tagline {
+  color: #000 !important;
+  font-weight: 800 !important;
+  text-shadow: 2px 2px 4px rgba(255,255,255,0.8) !important;
+}

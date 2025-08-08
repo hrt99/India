@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Access - Independence Day</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      background: linear-gradient(135deg, #ff9933, #ffffff, #138808);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .login-container { 
+      background: rgba(255,255,255,0.95);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+    }
+    .logo {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 30px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+      font-weight: 600;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    input:focus {
+      outline: none;
+      border-color: #ff9933;
+    }
+    .login-btn {
+      background: linear-gradient(135deg, #ff9933, #ffd700);
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: transform 0.2s ease;
+    }
+    .login-btn:hover {
+      transform: translateY(-2px);
+    }
+    .error {
+      color: #e74c3c;
+      margin-top: 10px;
+      display: none;
+    }
+    .links {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+    }
+    .links a {
+      color: #ff9933;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="logo">🇮🇳</div>
+    <h1>Admin Access</h1>
+    <form id="adminLogin">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required>
+      </div>
+      <button type="submit" class="login-btn">Access Admin Panel</button>
+      <div class="error" id="errorMsg">Invalid credentials!</div>
+    </form>
+    
+    <div class="links">
+      <a href="index.html">← Back to Website</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('adminLogin').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      
+      // Simple authentication (in production, use proper authentication)
+      if (username === 'admin' && password === 'independence2025') {
+        window.location.href = 'real-admin.html';
+      } else {
+        document.getElementById('errorMsg').style.display = 'block';
+        setTimeout(() => {
+          document.getElementById('errorMsg').style.display = 'none';
+        }, 3000);
+      }
+    });
+  </script>
+</body>
+</html>

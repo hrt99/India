@@ -1,0 +1,28 @@
+/* Image Quality Improvements */
+.defense-slide img {
+  width: 100% !important;
+  height: 300px !important;
+  object-fit: cover !important;
+  display: block !important;
+  image-rendering: -webkit-optimize-contrast !important;
+  image-rendering: crisp-edges !important;
+  filter: contrast(1.1) brightness(1.05) !important;
+}
+
+@media (max-width: 768px) {
+  .defense-slide img {
+    height: 220px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .defense-slide img {
+    height: 180px !important;
+  }
+}
+
+/* Remove all scroll animations - keep sections normal */
+section {
+  opacity: 1 !important;
+  transform: none !important;
+}

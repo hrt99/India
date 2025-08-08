@@ -1,0 +1,163 @@
+/* Critical Text Visibility Fixes */
+
+/* Fix share section - force dark background with white text */
+.share-section {
+  background: linear-gradient(135deg, #333 0%, #222 100%) !important;
+  color: white !important;
+}
+
+.share-section .section-title,
+.share-section .share-text,
+.share-section .trending-hashtags h3,
+.share-section .hashtag {
+  color: white !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5) !important;
+}
+
+/* Fix values section - force light background with dark text */
+.values-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%) !important;
+  color: #333 !important;
+}
+
+.values-section .section-title,
+.values-section .value-item h3,
+.values-section .value-item p {
+  color: #333 !important;
+  text-shadow: none !important;
+}
+
+.value-item {
+  background: white !important;
+  color: #333 !important;
+  border: 1px solid #ddd !important;
+}
+
+/* Fix tribute section - force light background with dark text */
+.tribute-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%) !important;
+  color: #333 !important;
+}
+
+.tribute-section .section-title,
+.tribute-section .hero-name,
+.tribute-section .hero-title,
+.tribute-section .hero-quote {
+  color: #333 !important;
+  text-shadow: none !important;
+}
+
+.hero-card {
+  background: white !important;
+  color: #333 !important;
+  border: 1px solid #ddd !important;
+}
+
+.hero-name {
+  color: var(--dark-blue) !important;
+}
+
+.hero-title {
+  color: #666 !important;
+}
+
+.hero-quote {
+  color: var(--orange) !important;
+}
+
+/* Fix hashtag visibility */
+.hashtag {
+  background: rgba(255,255,255,0.2) !important;
+  color: white !important;
+  border: 1px solid rgba(255,255,255,0.3) !important;
+}
+
+/* Remove floating info button */
+.floating-actions {
+  display: none !important;
+}
+
+/* Remove any stats display from main page */
+.stat-number,
+.stat-label,
+.stats-container,
+.stats-section,
+.live-feed-section {
+  display: none !important;
+}
+
+/* Ensure all sections have proper contrast */
+section {
+  position: relative;
+}
+
+/* Light sections */
+.timeline-section,
+.heritage-section,
+.states-section,
+.achievements-modern,
+.certificate-section,
+.viral-section,
+.tribute-section,
+.values-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%) !important;
+  color: #333 !important;
+}
+
+.timeline-section *,
+.heritage-section *,
+.states-section *,
+.achievements-modern *,
+.certificate-section *,
+.viral-section *,
+.tribute-section *,
+.values-section * {
+  color: #333 !important;
+}
+
+/* Dark sections */
+.hero-section,
+.quote-section,
+.countdown-section,
+.defense-gallery,
+.main-footer {
+  color: white !important;
+}
+
+.hero-section *,
+.quote-section *,
+.countdown-section *,
+.defense-gallery *,
+.main-footer * {
+  color: white !important;
+}
+
+/* Section titles */
+.section-title {
+  font-weight: 700 !important;
+  margin-bottom: 30px !important;
+}
+
+/* Light sections titles */
+.timeline-section .section-title,
+.heritage-section .section-title,
+.states-section .section-title,
+.achievements-modern .section-title,
+.certificate-section .section-title,
+.viral-section .section-title,
+.tribute-section .section-title,
+.values-section .section-title {
+  color: #333 !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1) !important;
+}
+
+/* Dark sections titles */
+.hero-section .section-title,
+.quote-section .section-title,
+.countdown-section .section-title,
+.defense-gallery .section-title,
+.share-section .section-title,
+.main-footer .section-title {
+  color: white !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5) !important;
+}

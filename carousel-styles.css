@@ -1,0 +1,161 @@
+/* Defense Carousel Styles */
+.defense-carousel {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 600%; /* 6 slides * 100% */
+}
+
+.defense-carousel .photo-card {
+  min-width: 16.666%; /* 100% / 6 slides */
+  position: relative;
+  flex-shrink: 0;
+}
+
+.defense-carousel .photo-card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.defense-carousel .photo-details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: white;
+  padding: 30px 20px 20px;
+  transform: translateY(0);
+}
+
+.defense-carousel .photo-details h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: var(--gold);
+}
+
+.defense-carousel .photo-details p {
+  font-size: 1rem;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.9);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  color: var(--dark-blue);
+  font-weight: bold;
+}
+
+.carousel-btn:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.carousel-btn.prev {
+  left: 20px;
+}
+
+.carousel-btn.next {
+  right: 20px;
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.carousel-dots .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dots .dot.active,
+.carousel-dots .dot:hover {
+  background: var(--gold);
+  transform: scale(1.2);
+}
+
+/* Animation classes */
+.animate-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .defense-carousel .photo-card img {
+    height: 300px;
+  }
+  
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .carousel-btn.prev {
+    left: 10px;
+  }
+  
+  .carousel-btn.next {
+    right: 10px;
+  }
+  
+  .defense-carousel .photo-details {
+    padding: 20px 15px 15px;
+  }
+  
+  .defense-carousel .photo-details h3 {
+    font-size: 1.2rem;
+  }
+  
+  .defense-carousel .photo-details p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Touch/swipe support for mobile */
+.carousel-container {
+  touch-action: pan-y;
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    cursor: grab;
+  }
+  
+  .carousel-container:active {
+    cursor: grabbing;
+  }
+}

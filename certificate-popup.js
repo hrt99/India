@@ -5,10 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     showCertificatePopup();
   }, 10000);
   
-  // Audio control - play after 10 seconds, max 2 times
-  setTimeout(() => {
-    playAudioControlled();
-  }, 10000);
+  // Audio removed from auto-play
 });
 
 function showCertificatePopup() {
@@ -75,42 +72,22 @@ function goToCertificate() {
   document.getElementById('certificate').scrollIntoView({ behavior: 'smooth' });
 }
 
-function playAudioControlled() {
-  // Check play count (max 2 times)
-  let playCount = parseInt(localStorage.getItem('audioPlayCount') || '0');
-  if (playCount >= 2) return;
-  
-  const jetSound = document.getElementById('jetSound');
+function playCertificateAudio() {
   const nationalAnthem = document.getElementById('nationalAnthem');
-  const bgMusic = document.getElementById('bgMusic');
   
-  // Set volumes
-  if (jetSound) jetSound.volume = 0.08;
-  if (nationalAnthem) nationalAnthem.volume = 0.12;
-  if (bgMusic) bgMusic.volume = 0.06;
-  
-  // Play sequence only if not muted
-  if (!window.musicMuted) {
-    if (jetSound) {
-      jetSound.play().catch(() => {});
-      
-      setTimeout(() => {
-        if (nationalAnthem && !window.musicMuted) {
-          nationalAnthem.play().catch(() => {});
-          
-          setTimeout(() => {
-            if (bgMusic && !window.musicMuted) {
-              bgMusic.play().catch(() => {});
-            }
-          }, 3000);
-        }
-      }, 2000);
-    }
+  // Play short celebration audio on certificate generation
+  if (nationalAnthem && !window.musicMuted) {
+    nationalAnthem.volume = 0.15;
+    nationalAnthem.currentTime = 0;
+    nationalAnthem.play().catch(() => {});
+    
+    // Stop after 5 seconds
+    setTimeout(() => {
+      nationalAnthem.pause();
+    }, 5000);
   }
-  
-  // Increment play count
-  localStorage.setItem('audioPlayCount', (playCount + 1).toString());
 }
 
-// Make function global
+// Make functions global
 window.goToCertificate = goToCertificate;
+window.playCertificateAudio = playCertificateAudio;
