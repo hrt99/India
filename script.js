@@ -28,13 +28,7 @@ function initJetIntro() {
   const nationalAnthem = document.getElementById("nationalAnthem");
   const bgMusic = document.getElementById("bgMusic");
 
-  // Configure audio
-  jetSound.volume = 0.15;
-  nationalAnthem.volume = 0.2;
-  bgMusic.volume = 0.1;
-  bgMusic.loop = false;
-
-  // Removed auto-play sounds
+  // Audio elements removed
 
   // Transition to main content
   setTimeout(() => {
@@ -186,8 +180,7 @@ function setupCertificateDownload(fullName, city) {
     // Generate certificate directly
     generateCertificateImage(fullName, city);
     
-    // Play light certificate sound once
-    playLightCertificateSound();
+    // Sound removed
     
     // Trigger download confetti
     triggerDownloadConfetti();
@@ -313,44 +306,9 @@ function generateCertificateImage(fullName, city) {
   }
 }
 
-// Music Control
+// Music Control Removed
 function initMusicControl() {
-  const musicToggle = document.getElementById("musicToggle");
-  const bgMusic = document.getElementById("bgMusic");
-  let isPlaying = false;
-
-  musicToggle.addEventListener("click", () => {
-    if (isPlaying) {
-      bgMusic.pause();
-      musicToggle.innerHTML = '<span class="music-icon">🔇</span>';
-      musicToggle.classList.remove('playing');
-      isPlaying = false;
-    } else {
-      bgMusic.currentTime = 0;
-      bgMusic.play().catch(() => console.log("Music play failed"));
-      musicToggle.innerHTML = '<span class="music-icon">🎵</span>';
-      musicToggle.classList.add('playing');
-      isPlaying = true;
-    }
-  });
-
-  bgMusic.addEventListener("play", () => {
-    isPlaying = true;
-    musicToggle.innerHTML = '<span class="music-icon">🎵</span>';
-    musicToggle.classList.add('playing');
-  });
-
-  bgMusic.addEventListener("pause", () => {
-    isPlaying = false;
-    musicToggle.innerHTML = '<span class="music-icon">🔇</span>';
-    musicToggle.classList.remove('playing');
-  });
-
-  bgMusic.addEventListener("ended", () => {
-    isPlaying = false;
-    musicToggle.innerHTML = '<span class="music-icon">🔇</span>';
-    musicToggle.classList.remove('playing');
-  });
+  // Music functionality removed
 }
 
 // Floating Elements Animation
@@ -516,28 +474,6 @@ function triggerIndependenceDayConfetti() {
   }());
 }
 
-// Light Certificate Sound Function
-function playLightCertificateSound() {
-  const audio = new Audio();
-  audio.volume = 0.3;
-  const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-  const oscillator = audioContext.createOscillator();
-  const gainNode = audioContext.createGain();
-  
-  oscillator.connect(gainNode);
-  gainNode.connect(audioContext.destination);
-  
-  oscillator.frequency.setValueAtTime(523.25, audioContext.currentTime); // C5
-  oscillator.frequency.setValueAtTime(659.25, audioContext.currentTime + 0.1); // E5
-  oscillator.frequency.setValueAtTime(783.99, audioContext.currentTime + 0.2); // G5
-  
-  gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-  gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
-  
-  oscillator.start(audioContext.currentTime);
-  oscillator.stop(audioContext.currentTime + 0.5);
-}
-
 // Utility Functions
 function showNotification(message) {
   // Create notification element
@@ -636,10 +572,7 @@ document.addEventListener('keydown', (e) => {
     return;
   }
   
-  // Press 'M' to toggle music
-  if (e.key.toLowerCase() === 'm') {
-    document.getElementById('musicToggle').click();
-  }
+  // Music toggle removed
   
   // Press 'C' to scroll to certificate section
   if (e.key.toLowerCase() === 'c') {

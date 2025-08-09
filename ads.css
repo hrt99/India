@@ -1,0 +1,38 @@
+/* Subtle Ad Integration */
+.ad-section {
+  padding: 20px;
+  background: transparent;
+  text-align: center;
+  margin: 60px 0;
+  position: relative;
+}
+
+.ad-section::before {
+  content: 'Advertisement';
+  font-size: 10px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.ad-section .adsbygoogle {
+  max-width: 728px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  overflow: hidden;
+  background: white;
+}
+
+@media (max-width: 768px) {
+  .ad-section {
+    margin: 40px 0;
+    padding: 15px;
+  }
+  
+  .ad-section .adsbygoogle {
+    max-width: 320px;
+  }
+}
